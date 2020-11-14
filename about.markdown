@@ -21,5 +21,3 @@ cd my_blog
 
 bundle exec jekyll serve
 ```
-
-[jekyll-organization]: https://github.com/jekyll
