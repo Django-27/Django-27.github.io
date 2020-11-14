@@ -1,0 +1,14 @@
+# 修改日期显示
+```
+pip install PyMySQL
+and then add this two lines to your Project/Project/init.py
+
+import pymysql
+pymysql.install_as_MySQLdb()
+```
+[airflow安装及使用的常见问题](https://www.jianshu.com/p/59948794fb4d)
+[大数据任务调度系统airflow的安装](https://blog.csdn.net/Crazy__Hope/article/details/83410340)
+
+workon yun
+airflow webserver -p 8081
+airflow scheduler

@@ -1,0 +1,158 @@
+
+<h1 id="使用localhost4000访问本地blog一直无响应">使用localhost:4000访问本地blog一直无响应</h1>
+<ul>
+  <li>
+    <p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 hexo-server 才能使用。</p>
+
+    <p><code class="language-plaintext highlighter-rouge">$ npm install hexo-server --save</code></p>
+  </li>
+  <li>
+    <p>安装完成后，输入以下命令以启动服务器，您的网站会在 http://localhost:4000 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p>
+
+    <p><code class="language-plaintext highlighter-rouge">$ hexo server</code></p>
+  </li>
+  <li>
+    <p>如果您想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下：</p>
+
+    <p><code class="language-plaintext highlighter-rouge">$ hexo server -p 5000</code></p>
+    <h1 id="hexo-a-fast-simple--powerful-blog-framework">·hexo· (A fast, simple &amp; powerful blog framework)</h1>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$npm install hexo-cli -g # 在之前需要安装nodejs
+$hexo init blog
+$cd blog
+$npm install
+$hexo server
+</code></pre></div>    </div>
+    <h1 id="搭建-hexo在执行-hexo-deploy-后出现-error-deployer-not-foundgit-的错误">搭建 hexo，在执行 hexo deploy 后,出现 error deployer not found:git 的错误</h1>
+    <p><code class="language-plaintext highlighter-rouge">npm install hexo-deployer-git --save</code> 可以解决</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hexo clean 
+hexo generate
+hexo deploy  # 最后，发布上去
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init # 有时候，部署完发现没有更新内容，实际就是部署失败，如下图，但git init后可以解决
+</code></pre></div></div>
+<p><img src="https://github.com/Django-27/workspace/blob/master/pic/hexo3.png" alt="image" /></p>
+
+<h2 id="git-warning-lf-will-be-replaced-by-crlf-或-fatal-crlf-would-be-replaced-by-lf">[git] warning: LF will be replaced by CRLF 或 fatal: CRLF would be replaced by LF</h2>
+<p>Git提供了一个换行符检查功能（core.safecrlf），可以在提交时检查文件是否混用了不同风格的换行符。这个功能的选项如下：</p>
+<ul>
+  <li>false - 不做任何检查</li>
+  <li>warn - 在提交时检查并警告</li>
+  <li>true - 在提交时检查，如果发现混用则拒绝提交，建议使用最严格的 true 选项</li>
+</ul>
+
+<p>假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾结束符问题。这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。虽然这是小问题，但它会极大地扰乱跨平台协作。</p>
+
+<p>Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用core.autocrlf来打开此项功能，如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.autocrlf true
+</code></pre></div></div>
+<p>Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.autocrlf input
+</code></pre></div></div>
+<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
+
+<p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global core.autocrlf false
+</code></pre></div></div>
+<p>Error: Could not open a connection to your authentication agent</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval $(ssh-agent)  # run it befor ssh-add
+
+</code></pre></div></div>
+<h1 id="一定要以管理员权限进行hexo-g--d">一定要以管理员权限进行hexo g -d</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error: fatal: AggregateException encountered.
+   One or more errors occurred.
+bash: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No error
+
+    at ChildProcess.&lt;anonymous&gt; (D:\Code\blog\node_modules\hexo-util\lib\spawn.js:37:17)
+
+    at emitTwo (events.js:106:13)
+    at ChildProcess.emit (events.js:194:7)
+    at ChildProcess.cp.emit (D:\Code\blog\node_modules\cross-spawn\lib\enoent.js:40:29)
+    at maybeClose (internal/child_process.js:899:16)
+    at Socket.&lt;anonymous&gt; (internal/child_process.js:342:11)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at Pipe._handle.close [as _onclose] (net.js:513:12)
+</code></pre></div></div>
+<h3 id="hexo-g--d-其实这个错误与网络也有关系有关系">hexo g -d 其实这个错误与网络也有关系，有关系</h3>
+<p>github的主页分为项目主页和个人主页，其中项目主页的介绍<a href="https://pages.github.com/">查看</a>。</p>
+<ul>
+  <li>http://username.github.io/repository</li>
+  <li>http://username.github.io</li>
+</ul>
+
+<h4 id="之后可以词用麦田音乐网的评论系统挺喜欢">之后可以词用麦田音乐网的评论系统，挺喜欢</h4>
+<p>有一个好处是可以随时评论，评完即走，类似于微信小程序。应该是用的WordPress搭建，<a href="https://github.com/WordPress/WordPress/blob/master/wp-comments-post.php">源码</a>。我还是比较喜欢这样的方式，简洁，相比较引入<a href="http://duoshuo.com/">多说</a>的评论系统。还有Disqus评论。目前，hexo博客框架的官方next主题已经支持多说，Disqus，Hypercomments，网易云跟贴等多种第三方评议系统，但是官方的文档并没有对这部分的内容及时进行更新，所以广大朋友并不知道除了多说，disqus之外，其实还有很多可以进行选择的。
+<img src="https://github.com/Django-27/workspace/blob/master/pic/hexo2.png" alt="image" /></p>
+
+<h4 id="adding-clustrmaps-to-your-page-footer">Adding ClustrMaps to your page footer</h4>
+<p>站点统计工具，统计ip地址，以图的形式展现<a href="http://clustrmaps.com/">。clustrMaps</a></p>
+
+<h4 id="初级阶段hexo的总结">初级阶段hexo的总结</h4>
+<p><img src="https://github.com/Django-27/workspace/blob/master/pic/hexo1.png" alt="image" /></p>
+<ul>
+  <li>Git连接ssh： 设置Git的user name和email
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name "aqiongbei" #改成你的注册Github的用户名
+git config --global user.email "aqiongbei@gmail.com" #改成你的注册Github的邮箱
+</code></pre></div>    </div>
+  </li>
+  <li>Git连接ssh： 生成SSH密钥
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen -t rsa -C "aqiongbei@gmail.com" #改成你注册Github的邮箱
+</code></pre></div>    </div>
+  </li>
+  <li>添加密钥到 Github</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>点击自己的头像-&gt;settings-&gt;SSH Keys-&gt;Add SSH key
+将本地 id_rsa.pub 中的内容粘贴到 Key 文本框中，随意输入一个 title，点击 Add Key 即可
+</code></pre></div></div>
+<ul>
+  <li>测试Git
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -T git@github.com   # 或使用参数-vT，可以显示过程
+</code></pre></div>    </div>
+  </li>
+  <li>安装hexo: npm install -g hexo-cli</li>
+  <li>新建一个网站: hexo init</li>
+  <li>添加一个文档: hexo new ‘name’</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>hexo clean</td>
+          <td>hexo g -d</td>
+          <td>hexo s -p 4000</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>npm install hexo-deployer-git –save
+    <h1 id="npm安装hexo速度过慢">npm安装hexo速度过慢</h1>
+  </li>
+</ul>
+
+<p>由于某些大家都知道的缘故，npm官方源在国内的下载速度极其慢，用官网的npm install hexo-cli -g速度非常感人，所以不推荐这种方式。这里我推荐用淘宝的npm分流——cnpm
+安装过程很简单：
+npm install -g cnpm –registry=https://registry.npm.taobao.org
+然后等着装完即可，之后的用法和npm一样，无非是把npm install改成cnpm install,但是速度比之前快了不止一个数量级(不过下文为了方便理解，还是会用默认的npm安装，如果你发现速度不好的话，请自行替换成’cnpm’)</p>
+
+<h4 id="更换主题-yelee">更换主题 <a href="https://github.com/MOxFIVE/hexo-theme-yelee">yelee</a></h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+title: 技术杂项_1_记录(已完成)
+date: 2017-03-30
+tags:
+---
+&lt;Excerpt in index | 首页摘要&gt;
+实现Hexo首页展示，这里显示固定大小的一块简介&gt;
+，但是由于没有什么可以写的，反而排版不好了不&gt;
+如就是什么都不想，也不要这个排版，就是让他世&gt;
+界显示吧。
+&lt;!-- more --&gt;
+&lt;The rest of contents | 余下全文&gt;  # 这个尖括号也算作是开始的正文部分
+</code></pre></div></div>
+<p>关于配置文件的修改之后，需要hexo clean，才能生效。<a href="https://doc.scrapy.org/en/latest/topics/practices.html?highlight=scrapy.crawler.CrawlerProcess">一次执行多个爬虫</a></p>

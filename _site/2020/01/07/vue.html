@@ -1,0 +1,485 @@
+<h1 id="1-vue-基础">1 vue 基础</h1>
+<h2 id="11-创建vue应用">1.1 创建vue应用</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script&gt; &lt;!-- 引入Vue --</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+             <span class="c">&lt;!--</span><span class="nx">声明变量</span><span class="err">，</span><span class="nx">文本插值的方式</span><span class="o">--&gt;</span>
+            
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">qiyuan</span><span class="dl">"</span><span class="o">&gt;</span>
+            
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        
+        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/jscript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span> <span class="c">&lt;!--</span><span class="nx">Vue是一个全局变量</span><span class="err">，</span><span class="k">new</span> <span class="nx">Vue可以获得一个Vue的应用</span><span class="err">，</span> <span class="nx">返回一个应用对象实例app</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>  <span class="c">&lt;!--</span><span class="nx">el代表element元素</span><span class="err">，#</span><span class="nx">app通过id选择器的方式选中上边的div</span><span class="err">，</span><span class="nx">id</span><span class="o">=</span><span class="nx">app</span>   <span class="o">--&gt;</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>   <span class="c">&lt;!--</span><span class="nx">data用于保存数据</span><span class="err">，</span><span class="nx">这里对上边视图div中声明的变量进行注册</span><span class="err">，</span><span class="nx">并初始化赋值</span><span class="o">--&gt;</span> 
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello world</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">qiyuan</span><span class="dl">"</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+<h2 id="12-数据和方法">1.2 数据和方法</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        
+        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="mi">1</span> <span class="p">};</span> <span class="c">&lt;!--</span><span class="nx">声明数据对象</span><span class="o">--&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="nx">data</span>  <span class="c">&lt;!--</span><span class="nx">前面的data是Vue的属性</span><span class="err">，</span><span class="nx">后面的data是变量</span><span class="o">--&gt;</span>
+            <span class="p">});</span>
+            
+            <span class="nx">vm</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">){</span> <span class="c1">//$watch实例方法，可以观察变量的变化，之前的值，和之后的值;watch函数第一个是观察的变量，后边的newValue和oldValue是固定名称</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">)</span>
+            <span class="p">})</span>
+            <span class="c1">// data.name = "hi data name"</span>
+            <span class="c1">// vm.$data.name = "qi" // 通过$符合拿到Vue实例的属性和方法</span>
+            <span class="nx">vm</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">qiyuan</span><span class="dl">"</span> <span class="c1">// 三种方式，都可以拿到和修改属性值，即响应式</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+<h2 id="13-声明周期钩子">1.3 声明周期钩子</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        
+        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>     
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">qiyuan</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="c1">// 在实例初始化之前，数据观测(data ovserver)和 event/watch 事件配置之前调用</span>
+                <span class="na">beforeCreate</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">beforeCreate</span><span class="dl">"</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="cm">/* 在实例创建完成后被立即调用。
+                在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。
+                然而，挂载阶段还没开始，$el 属性目前不可见。 */</span>
+                <span class="na">created</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">created</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">},</span>
+                <span class="c1">//在挂载开始之前被调用：相关的渲染函数首次被调用</span>
+                <span class="na">beforeMount</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeMount</span><span class="dl">'</span><span class="p">);</span>
+                
+                <span class="p">},</span>
+                <span class="c1">//el 被新创建的 vm.$el 替换, 挂在成功	</span>
+                <span class="na">mounted</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">mounted</span><span class="dl">'</span><span class="p">);</span>
+                
+                <span class="p">},</span>
+                <span class="c1">//数据更新时调用</span>
+                <span class="na">beforeUpdate</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">beforeUpdate</span><span class="dl">'</span><span class="p">);</span>
+                		
+                <span class="p">},</span>
+                <span class="c1">//组件 DOM 已经更新, 组件更新完毕</span>
+                <span class="na">updated</span> <span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">updated</span><span class="dl">'</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+          
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">$data</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+            
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+                <span class="nx">vm</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">qiyuan change ... </span><span class="dl">"</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">vm</span><span class="p">.</span><span class="nx">$data</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+            <span class="p">},</span> <span class="mi">3000</span><span class="p">)</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>            
+	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="14-模板语法-插值">1.4 模板语法-插值</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">once</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">once</span><span class="o">&gt;</span>
+             <span class="c">&lt;!--</span> <span class="c1">// 文本插值 指定 v-once绑定 值只变化一次 --&gt;</span>
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+             <span class="c">&lt;!--</span> <span class="nx">文本插值</span><span class="p">,</span><span class="nx">双大号的方式</span><span class="err">，</span><span class="nx">即Mustache语法</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Using</span> <span class="nx">mustaches</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">v</span><span class="o">-</span><span class="nx">html</span><span class="o">=</span><span class="dl">"</span><span class="s2">rawHtml</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/p&gt; &lt;!--双大括号将数据解释为普通文本，而非HTML代码，即需要v-html指令--</span><span class="err">&gt;
+</span>            <span class="c">&lt;!--</span> <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Using</span> <span class="nx">v</span><span class="o">-</span><span class="nx">html</span> <span class="nx">directive</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="nx">html</span><span class="o">=</span><span class="dl">"</span><span class="s2">rawHtml</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/span&gt;&lt;/</span><span class="nx">p</span><span class="o">&gt;</span> <span class="o">--&gt;</span>
+            
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">color</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">test</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">msg</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hi vue</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">rawHtml</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;span style="color:red"&gt;this is should be red&lt;/span&gt;</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">blue</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="na">number</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="na">ok</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="nx">vm</span><span class="p">.</span><span class="nx">msg</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">hi....</span><span class="dl">"</span><span class="p">;</span>         
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">style</span> <span class="nx">type</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">text/css</span><span class="dl">"</span> <span class="o">&gt;</span>  <span class="c">&lt;!--</span> <span class="nx">v</span><span class="o">-</span><span class="nx">bind动态绑定class的属性</span><span class="o">--&gt;</span>
+            <span class="p">.</span><span class="nx">red</span> <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span> <span class="nx">greenyellow</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="p">.</span><span class="nx">blue</span> <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span> <span class="nx">blue</span><span class="p">;</span>
+                <span class="nx">font</span> <span class="o">-</span> <span class="nx">size</span><span class="p">:</span> <span class="mi">100</span> <span class="nx">px</span><span class="p">;</span>
+            <span class="p">}</span> <span class="o">&lt;</span>
+            <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                    <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#once</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">msg</span><span class="p">:</span> <span class="dl">"</span><span class="s2">once bind</span><span class="dl">"</span>
+                    <span class="p">}</span>
+                <span class="p">})</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>
+        <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="15-模板语法-指令">1.5 模板语法-指令</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+          <span class="c">&lt;!--</span>  <span class="nx">操作元素的class列表和内联样式是数据绑定的常见需求</span><span class="err">，</span><span class="nx">vue使用v</span><span class="o">-</span><span class="nx">bind绑定时进行了加强</span>
+            <span class="nx">表达式结果的类型除了字符串</span><span class="err">，</span><span class="nx">还可以是数据或对象</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span>
+            <span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">test</span><span class="dl">"</span>
+            <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">{ active: isActive , green: isGreen }</span><span class="dl">"</span>
+            <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="p">:</span><span class="kd">class</span><span class="o">=</span><span class="dl">"</span><span class="s2">[ isActive ? 'active': '', isGreen ? 'green': '']</span><span class="dl">"</span>
+            <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">width:150px; height:150px; text-align:center; line-height:150px;</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="nx">vue</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span>
+            <span class="p">:</span><span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">{color: color, fontSize:size}</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="nx">next</span> <span class="nx">vue</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">isActive</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="na">isGreen</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="na">color</span><span class="p">:</span> <span class="dl">'</span><span class="s1">$FFFFFF</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="na">size</span><span class="p">:</span> <span class="dl">'</span><span class="s1">50px</span><span class="dl">'</span><span class="p">,</span>
+                    <span class="na">isRed</span><span class="p">:</span> <span class="kc">true</span>
+                <span class="p">}</span> 
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+            <span class="p">.</span><span class="nx">active</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="err">#</span><span class="mi">00</span><span class="nx">aa00</span><span class="p">;</span> <span class="p">}</span>
+            <span class="p">.</span><span class="nx">test</span><span class="p">{</span><span class="nx">font</span><span class="o">-</span><span class="nx">size</span><span class="p">:</span> <span class="mi">30</span><span class="nx">px</span><span class="p">;}</span>
+            <span class="p">.</span><span class="nx">active</span><span class="p">{</span> <span class="nl">background</span><span class="p">:</span> <span class="err">#</span><span class="nx">FF0000</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="16-class与style绑定">1.6 class与style绑定</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="c">&lt;!--</span> <span class="nx">指令v</span><span class="o">-</span> <span class="nx">为前缀的特殊属性</span><span class="err">；</span><span class="nx">指令特性的预期值是单个js表达式</span><span class="err">（</span><span class="nx">v</span><span class="o">-</span><span class="nx">for例外</span><span class="err">）</span> <span class="o">--&gt;</span>
+            <span class="c">&lt;!--</span> <span class="nx">指令的职责是</span><span class="err">，</span><span class="nx">当表达式的值改变是</span><span class="err">，</span><span class="nx">将其产生的连带影响</span><span class="err">，</span><span class="nx">响应式的作用于dom</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">seen</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">now</span> <span class="nx">you</span> <span class="nx">see</span> <span class="nx">me</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            <span class="c">&lt;!--</span> <span class="nx">一些指令还可以接受参数</span><span class="err">，</span><span class="nx">在指令之后以冒号表示</span><span class="err">，</span><span class="nx">如v</span><span class="o">-</span><span class="nx">bind</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">a</span> <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="p">:</span><span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">url</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">...</span><span class="o">&lt;</span><span class="sr">/a</span><span class="err">&gt;
+</span>            <span class="c">&lt;!--</span> <span class="nx">修饰符是以半角句号</span><span class="p">.</span><span class="nx">指明的特殊后缀</span><span class="err">，</span><span class="nx">用于指出一个指令应该以特殊方式绑定</span> <span class="o">--&gt;</span>
+            <span class="c">&lt;!--</span> <span class="nx">如</span><span class="p">.</span><span class="nx">prevent修饰符告诉v</span><span class="o">-</span><span class="nx">on指令对于触发事件调用event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">()</span> <span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">click1</span><span class="dl">"</span><span class="o">&gt;</span> <span class="c">&lt;!--</span> <span class="nx">通过</span><span class="p">@</span><span class="nx">绑定事件</span> <span class="o">--&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span> <span class="p">@</span><span class="nd">click</span><span class="p">.</span><span class="nx">stop</span><span class="o">=</span><span class="dl">"</span><span class="s2">click2</span><span class="dl">"</span><span class="o">&gt;</span> <span class="c">&lt;!--</span> <span class="p">.</span><span class="nx">stop当前事件执行了</span><span class="err">，</span><span class="nx">就停下来</span><span class="o">--&gt;</span>
+                    <span class="nx">click</span> <span class="nx">me</span>
+                <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">seen</span><span class="p">:</span> <span class="kc">true</span> <span class="p">,</span><span class="c">&lt;!--</span><span class="nx">如果为false</span><span class="err">，</span><span class="nx">则不会显示p标签的内容</span><span class="o">--&gt;</span>
+                    <span class="na">url</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://cn.vuejs.org</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">click1</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click1 ...</span><span class="dl">'</span><span class="p">)</span>
+                    <span class="p">},</span>
+                    <span class="na">click2</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(){</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">click2 ...</span><span class="dl">'</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="17-条件渲染列表渲染">1.7 条件渲染、列表渲染</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">type === 'A'</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="nx">A</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">v</span><span class="o">-</span><span class="k">else</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="dl">"</span><span class="s2">type === 'B'</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="nx">B</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">v</span><span class="o">-</span><span class="k">else</span><span class="o">&gt;</span>
+                <span class="nx">not</span> <span class="nx">A</span> <span class="nx">and</span> <span class="nx">B</span>
+            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">h1</span> <span class="nx">v</span><span class="o">-</span><span class="nx">show</span><span class="o">=</span><span class="dl">"</span><span class="s2">ok</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="o">&lt;</span><span class="sr">/h1&gt; &lt;!-- v-show先渲染，显示与否由css控制 --</span><span class="err">&gt;
+</span>           <span class="c">&lt;!--</span> <span class="nx">v</span><span class="o">-</span><span class="nx">for指令基于一个数组来渲染一个列表</span><span class="err">，</span><span class="nx">需使用item</span> <span class="k">in</span> <span class="nx">items形式的特殊语法</span><span class="err">，</span><span class="nx">items是源数组</span><span class="err">，</span><span class="nx">item是被迭代的数组元素的别名</span> <span class="o">--&gt;</span>
+           <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+               <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">v</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">item, index in items</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">bind</span><span class="p">:</span><span class="nx">key</span><span class="o">=</span><span class="dl">"</span><span class="s2">index</span><span class="dl">"</span><span class="o">&gt;</span>
+                   
+               <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>           <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>           <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+               <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">v</span><span class="o">-</span><span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">value, key in object</span><span class="dl">"</span> <span class="p">:</span><span class="nx">key</span><span class="o">=</span><span class="dl">"</span><span class="s2">key</span><span class="dl">"</span><span class="o">&gt;</span>
+                    
+               <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>           <span class="o">&lt;</span><span class="sr">/ul</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">type</span><span class="p">:</span> <span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span>
+                    <span class="na">ok</span><span class="p">:</span> <span class="kc">true</span> <span class="p">,</span>
+                    <span class="na">items</span><span class="p">:</span> <span class="p">[</span>
+                        <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Foo</span><span class="dl">'</span><span class="p">},</span>
+                        <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bar</span><span class="dl">'</span><span class="p">}</span>
+                    <span class="p">],</span>
+                    <span class="na">object</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">title</span><span class="p">:</span> <span class="dl">'</span><span class="s1">hello to do lists in vue</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">author</span><span class="p">:</span> <span class="dl">'</span><span class="s1">qiyuan</span><span class="dl">'</span><span class="p">,</span>
+                        <span class="na">publishdAt</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2020</span><span class="dl">'</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="18-条件绑定">1.8 条件绑定</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>
+	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">example</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="c">&lt;!--</span> <span class="nx">使用</span> <span class="nx">v</span><span class="o">-</span><span class="nx">on</span> <span class="nx">指令监听</span> <span class="nx">DOM</span> <span class="nx">事件</span><span class="err">，</span><span class="nx">并在触发是运行一些js代码</span> <span class="o">--&gt;</span>
+                <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">v</span><span class="o">-</span><span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">counter += 1</span><span class="dl">"</span><span class="o">&gt;</span> <span class="nx">Add</span> <span class="mi">1</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span> <span class="nx">The</span> <span class="nx">button</span> <span class="nx">above</span> <span class="nx">has</span> <span class="nx">been</span> <span class="nx">clicked</span>  <span class="nx">times</span><span class="p">.</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">v</span><span class="o">-</span><span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">greet('abc', $event)</span><span class="dl">"</span><span class="o">&gt;</span> <span class="nx">Greet</span> <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">example</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#example</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">counter</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">vue</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="na">methods</span><span class="p">:{</span>
+                    <span class="na">greet</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="c">&lt;!--</span><span class="nx">形参</span><span class="o">--&gt;</span>
+                        <span class="nx">alert</span><span class="p">(</span><span class="nx">str</span><span class="p">);</span>
+                        <span class="c1">// alert(this.name)</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="19-表单输入绑定">1.9 表单输入绑定</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="c">&lt;!--</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model指令在表单</span><span class="o">&lt;</span><span class="nx">input</span><span class="o">&gt;</span><span class="err">、</span><span class="o">&lt;</span><span class="nx">textarea</span><span class="o">&gt;</span><span class="err">、</span><span class="o">&lt;</span><span class="nx">select</span><span class="o">&gt;</span><span class="nx">元素上创建双向数据绑定</span>
+             <span class="nx">根据控件类型自动选取正确的方法更新元素</span><span class="o">--&gt;</span>
+            <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">message</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">edit me</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Message</span> <span class="nx">is</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/p&gt; &lt;!--单行输入--</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">textarea</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">message2</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">add multiple lines</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/textarea&gt;&lt;!--多行输入--</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">Message2</span> <span class="nx">is</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>            
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">margin-top:20px</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkdName</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Jack</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkbox</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">tom</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">tom</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">checkdName</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">tom</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Tom</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Checked</span> <span class="nx">names</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            
+            <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="dl">"</span><span class="s2">margin-top:20px</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">One</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">picked</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">One</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">radio</span><span class="dl">"</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span> <span class="nx">value</span><span class="o">=</span><span class="dl">"</span><span class="s2">Two</span><span class="dl">"</span> <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="dl">"</span><span class="s2">picked</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span> <span class="k">for</span><span class="o">=</span><span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">Two</span><span class="o">&lt;</span><span class="sr">/label</span><span class="err">&gt;
+</span>                <span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="nx">Picked</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>            
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">button</span><span class="dl">"</span> <span class="p">@</span><span class="nd">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">提交</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>          
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>    
+                    <span class="na">message</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+                    <span class="na">message2</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+                    <span class="na">checkdName</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">jack</span><span class="dl">"</span><span class="p">],</span> <span class="c">&lt;!--</span> <span class="nx">初始化并可以给一个初始值value的内容</span><span class="err">，</span><span class="nx">复选框用列表标出</span><span class="err">，</span><span class="nx">单选框用字符串变量保存</span><span class="o">--&gt;</span>
+                    <span class="na">picked</span> <span class="p">:</span> <span class="dl">"</span><span class="s2">Two</span><span class="dl">"</span>
+                <span class="p">},</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">submit</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(){</span>
+                        <span class="c1">// this.message;</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">checkdName</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c">&lt;!--</span><span class="nx">收集一个变量的值</span> <span class="k">this</span><span class="p">.</span><span class="nx">checkdName</span><span class="p">;</span> <span class="nx">通过一个对象收集多个值</span><span class="o">--&gt;</span>
+                        <span class="kd">var</span> <span class="nx">postObj</span> <span class="o">=</span> <span class="p">{</span> 
+                            <span class="na">msg1</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">,</span>
+                            <span class="na">msg2</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">message2</span><span class="p">,</span>
+                            <span class="na">msg3</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">checkdName</span><span class="p">,</span>
+                            <span class="na">msg4</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">picked</span>
+                        <span class="p">}</span>
+                        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">postObj</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>
+<h2 id="110-组件组件注册">1.10 组件、组件注册</h2>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+		<span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">vue.js</span><span class="dl">"</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">UTF-8</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">button</span><span class="o">-</span><span class="nx">counter</span> <span class="nx">title</span><span class="o">=</span><span class="dl">"</span><span class="s2">title1 : </span><span class="dl">"</span> <span class="p">@</span><span class="nd">clicknow</span><span class="o">=</span><span class="dl">"</span><span class="s2">clicknow</span><span class="dl">"</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">hi</span> <span class="p">..</span> <span class="nx">h2</span><span class="o">&lt;</span><span class="sr">/h2&gt; &lt;!-- 插槽slot --</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="sr">/button-counter&gt; &lt;!--标签的名称就是组件的名称--</span><span class="err">&gt;
+</span>            <span class="o">&lt;</span><span class="nx">test</span><span class="o">&gt;&lt;</span><span class="sr">/test&gt; &lt;!-- 使用局部注册的组件 --</span><span class="err">&gt;
+</span>          
+        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">text/javascript</span><span class="dl">"</span><span class="o">&gt;</span>
+            <span class="c1">// 组件是可复用的vue实例, 与new Vue接收相同的实例,组件模板必须具有根节点</span>
+            <span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="dl">"</span><span class="s2">button-counter</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>  <span class="c">&lt;!--</span> <span class="nx">第一个参数是组件名称</span> <span class="o">--&gt;</span> <span class="c">&lt;!--</span> <span class="nx">全局注册</span> <span class="o">--&gt;</span>
+                <span class="na">props</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">title</span><span class="dl">"</span><span class="p">],</span>  <span class="c">&lt;!--</span><span class="nx">props</span> <span class="nx">接收数据</span> <span class="o">--&gt;</span>
+                <span class="na">data</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="p">{</span> <span class="na">count</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+                <span class="p">},</span>
+                <span class="na">template</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;div&gt;&lt;h1&gt;hi...&lt;/h1&gt;&lt;button v-on:click="clickfun"&gt; you click me 8times. ,&lt;/button&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/slot&gt;&lt;/div&gt;</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="na">clickfun</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">count</span> <span class="o">++</span><span class="p">;</span>
+                        <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="dl">'</span><span class="s1">clicknow</span><span class="dl">'</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">count</span><span class="p">)</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+            <span class="kd">var</span> <span class="nx">vm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+                <span class="na">el</span><span class="p">:</span> <span class="dl">"</span><span class="s2">#app</span><span class="dl">"</span><span class="p">,</span>
+                <span class="na">data</span><span class="p">:</span> <span class="p">{</span>    
+                <span class="p">},</span>
+                <span class="na">methods</span><span class="p">:{</span>
+                	<span class="na">clicknow</span> <span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                	<span class="p">}</span>
+                <span class="p">},</span>
+                <span class="na">components</span><span class="p">:</span> <span class="p">{</span>  <span class="c">&lt;!--</span> <span class="nx">局部注册</span><span class="err">，</span><span class="nx">还有模块内注册</span> <span class="k">import</span> <span class="p">...</span> <span class="k">from</span> <span class="p">...</span><span class="o">--&gt;</span>
+                    <span class="na">test</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="na">template</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;h2&gt;h2....&lt;/h2&gt;</span><span class="dl">"</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">});</span>
+        <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>	<span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span>
+</code></pre></div></div>

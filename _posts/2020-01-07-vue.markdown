@@ -1,0 +1,495 @@
+# 1 vue 基础
+## 1.1 创建vue应用
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script> <!-- 引入Vue -->
+	</head>
+	<body>
+        <div id="app">
+            {{ message }} <!--声明变量，文本插值的方式-->
+            {{ name }}
+        </div>
+        <div id="qiyuan">
+            
+        </div>
+        
+        <script type="text/jscript">
+            var app = new Vue({ <!--Vue是一个全局变量，new Vue可以获得一个Vue的应用， 返回一个应用对象实例app
+                el: "#app",  <!--el代表element元素，#app通过id选择器的方式选中上边的div，id=app   -->
+                data: {   <!--data用于保存数据，这里对上边视图div中声明的变量进行注册，并初始化赋值--> 
+                    message: "hello world",
+                    name: "qiyuan"
+                }
+            });
+        </script>
+	</body>
+</html>
+```
+## 1.2 数据和方法
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            {{ name }}
+        </div>
+        
+        <script type="text/javascript">
+            var data = { name: 1 }; <!--声明数据对象-->
+            var vm = new Vue({
+                el: "#app",
+                data: data  <!--前面的data是Vue的属性，后面的data是变量-->
+            });
+            
+            vm.$watch("name", function(newValue, oldValue){ //$watch实例方法，可以观察变量的变化，之前的值，和之后的值;watch函数第一个是观察的变量，后边的newValue和oldValue是固定名称
+                console.log(newValue, oldValue)
+            })
+            // data.name = "hi data name"
+            // vm.$data.name = "qi" // 通过$符合拿到Vue实例的属性和方法
+            vm.name = "qiyuan" // 三种方式，都可以拿到和修改属性值，即响应式
+        </script>
+	</body>
+</html>
+```
+## 1.3 声明周期钩子
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            {{ name }}
+        </div>
+        
+        <script type="text/javascript">     
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    name: "qiyuan"
+                },
+                // 在实例初始化之前，数据观测(data ovserver)和 event/watch 事件配置之前调用
+                beforeCreate : function(){
+                    console.log("beforeCreate");
+                },
+                /* 在实例创建完成后被立即调用。
+                在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。
+                然而，挂载阶段还没开始，$el 属性目前不可见。 */
+                created : function(){
+                    console.log('created');
+                },
+                //在挂载开始之前被调用：相关的渲染函数首次被调用
+                beforeMount : function(){
+                	console.log('beforeMount');
+                
+                },
+                //el 被新创建的 vm.$el 替换, 挂在成功	
+                mounted : function(){
+                	console.log('mounted');
+                
+                },
+                //数据更新时调用
+                beforeUpdate : function(){
+                	console.log('beforeUpdate');
+                		
+                },
+                //组件 DOM 已经更新, 组件更新完毕
+                updated : function(){
+                	console.log('updated');
+                }
+            });
+          
+            console.log(vm.$data.name)
+            
+            setTimeout(function(){
+                vm.name = "qiyuan change ... "
+                console.log(vm.$data.name)
+            }, 3000)
+        </script>
+            
+	</body>
+</html>
+
+```
+## 1.4 模板语法-插值
+```javascript
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="once" v-once>
+            {{msg}} <!-- // 文本插值 指定 v-once绑定 值只变化一次 -->
+        </div>
+        <div id="app">
+            {{msg}} <!-- 文本插值,双大号的方式，即Mustache语法 -->
+            <p>Using mustaches: {{ rawHtml }}</p>
+            <p v-html="rawHtml"></p> <!--双大括号将数据解释为普通文本，而非HTML代码，即需要v-html指令-->
+            <!-- <p>Using v-html directive: <span v-html="rawHtml"></span></p> -->
+            
+            <div v-bind:class="color">test...</div>
+            
+            <p>{{ number + 1 }}</p>
+            <p>{{ 1 == 1 ? 'YES' : 'NO' }}</p>
+            <p>{{ message.split('').reverse().join('') }}</p>
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    msg: "hi vue",
+                    rawHtml: '<span style="color:red">this is should be red</span>',
+                    color: 'blue',
+                    number: 10,
+                    ok: 1,
+                    message: "vue"
+                }
+            });
+            vm.msg = "hi....";         
+        </script>
+        <style type = "text/css" >  <!-- v-bind动态绑定class的属性-->
+            .red {
+                color: greenyellow;
+            }
+
+            .blue {
+                color: blue;
+                font - size: 100 px;
+            } <
+            </style>
+
+        <script type="text/javascript" charset="utf-8">
+            var vm = new Vue({
+                    el: "#once",
+                    data: {
+                        msg: "once bind"
+                    }
+                })
+        </script>
+
+        </style>
+    </body>
+</html>
+
+```
+## 1.5 模板语法-指令
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <div id="app">
+          <!--  操作元素的class列表和内联样式是数据绑定的常见需求，vue使用v-bind绑定时进行了加强
+            表达式结果的类型除了字符串，还可以是数据或对象 -->
+            <div
+            class="test"
+            v-bind:class="{ active: isActive , green: isGreen }"
+            v-bind:class="[ isActive ? 'active': '', isGreen ? 'green': '']"
+            style="width:150px; height:150px; text-align:center; line-height:150px;">
+                vue
+            </div>
+            <div
+            :style="{color: color, fontSize:size}">
+                next vue
+            </div>
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    isActive: true,
+                    isGreen: true,
+                    color: '$FFFFFF',
+                    size: '50px',
+                    isRed: true
+                } 
+            });
+        </script>
+        <style>
+            .active{ background: #00aa00; }
+            .test{font-size: 30px;}
+            .active{ background: #FF0000}
+        </style>
+	</body>
+</html>
+
+```
+## 1.6 class与style绑定
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            <!-- 指令v- 为前缀的特殊属性；指令特性的预期值是单个js表达式（v-for例外） -->
+            <!-- 指令的职责是，当表达式的值改变是，将其产生的连带影响，响应式的作用于dom -->
+            <p v-if="seen">now you see me</p>
+            <!-- 一些指令还可以接受参数，在指令之后以冒号表示，如v-bind -->
+            <a v-bind:href="url">...</a>
+            <!-- 修饰符是以半角句号.指明的特殊后缀，用于指出一个指令应该以特殊方式绑定 -->
+            <!-- 如.prevent修饰符告诉v-on指令对于触发事件调用event.preventDefault() -->
+            <div @click="click1"> <!-- 通过@绑定事件 -->
+                <div @click.stop="click2"> <!-- .stop当前事件执行了，就停下来-->
+                    click me
+                </div>
+            </div>
+            
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    seen: true ,<!--如果为false，则不会显示p标签的内容-->
+                    url: "https://cn.vuejs.org"
+                },
+                methods: {
+                    click1: function(){
+                        console.log('click1 ...')
+                    },
+                    click2: function (){
+                        console.log('click2 ...')
+                    }
+                }
+            });
+        </script>
+	</body>
+</html>
+
+```
+## 1.7 条件渲染、列表渲染
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            <div v-if="type === 'A'">
+                A
+            </div>
+            <div v-else-if="type === 'B'">
+                B
+            </div>
+            <div v-else>
+                not A and B
+            </div>
+            <h1 v-show="ok">Hello</h1> <!-- v-show先渲染，显示与否由css控制 -->
+           <!-- v-for指令基于一个数组来渲染一个列表，需使用item in items形式的特殊语法，items是源数组，item是被迭代的数组元素的别名 -->
+           <ul>
+               <li v-for="item, index in items" v-bind:key="index">
+                   {{ index }}{{ item.message}}
+               </li>
+           </ul>
+           <ul>
+               <li v-for="value, key in object" :key="key">
+                   {{ key }} {{ value }}
+               </li>
+           </ul>
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    type: "A",
+                    ok: true ,
+                    items: [
+                        { message: 'Foo'},
+                        { message: 'Bar'}
+                    ],
+                    object: {
+                        title: 'hello to do lists in vue',
+                        author: 'qiyuan',
+                        publishdAt: '2020'
+                    }
+                },
+            });
+        </script>
+	</body>
+</html>
+
+```
+## 1.8 条件绑定
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+
+	<body>
+        <div id="app">
+            <div id="example">
+                <!-- 使用 v-on 指令监听 DOM 事件，并在触发是运行一些js代码 -->
+                <button v-on:click="counter += 1"> Add 1</button>
+                <p> The button above has been clicked {{ counter }} times.</p>
+                <button v-on:click="greet('abc', $event)"> Greet </button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var example = new Vue({
+                el: "#example",
+                data: {
+                    counter: 0,
+                    name: "vue"
+                },
+                methods:{
+                    greet : function (str, e) { <!--形参-->
+                        alert(str);
+                        // alert(this.name)
+                        console.log(e);
+                    }
+                }
+            })
+        </script>
+	</body>
+</html>
+
+```
+## 1.9 表单输入绑定
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            <!-- v-model指令在表单<input>、<textarea>、<select>元素上创建双向数据绑定
+             根据控件类型自动选取正确的方法更新元素-->
+            <input v-model="message" placeholder="edit me">
+            <p>Message is: {{ message }}</p> <!--单行输入-->
+            <textarea v-model="message2" placeholder="add multiple lines"></textarea><!--多行输入-->
+            <p>Message2 is: {{ message2}}</p>
+            
+            <div style="margin-top:20px">
+                <input type="checkbox" id="jack" value="jack" v-model="checkdName">
+                <label for="jack">Jack</label>
+                <input type="checkbox" id="tom" value="tom" v-model="checkdName">
+                <label for="tom">Tom</label>
+                <br>
+                <span>Checked names: {{ checkdName}}</span>
+            </div>
+            
+            <div style="margin-top:20px">
+                <input type="radio" id="one" value="One" v-model="picked">
+                <label for="one">One</label>
+                <br>
+                <input type="radio" id="two" value="Two" v-model="picked">
+                <label for="two">Two</label>
+                <br>
+                <span>Picked: {{ picked }}</span>
+            </div>
+            
+            <button type="button" @click="submit">提交</button>
+          
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el: "#app",
+                data: {    
+                    message: "",
+                    message2: "",
+                    checkdName: ["jack"], <!-- 初始化并可以给一个初始值value的内容，复选框用列表标出，单选框用字符串变量保存-->
+                    picked : "Two"
+                },
+                methods: {
+                    submit : function (){
+                        // this.message;
+                        console.log(this.checkdName[0]); <!--收集一个变量的值 this.checkdName; 通过一个对象收集多个值-->
+                        var postObj = { 
+                            msg1: this.message,
+                            msg2: this.message2,
+                            msg3: this.checkdName,
+                            msg4: this.picked
+                        }
+                        console.log(postObj)
+                    }
+                }
+            });
+        </script>
+	</body>
+</html>
+
+```
+## 1.10 组件、组件注册
+```javascript
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+        <script src="vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+        <div id="app">
+            <button-counter title="title1 : " @clicknow="clicknow">
+                <h2>hi .. h2</h2> <!-- 插槽slot -->
+            </button-counter> <!--标签的名称就是组件的名称-->
+            <test></test> <!-- 使用局部注册的组件 -->
+          
+        </div>
+        <script type="text/javascript">
+            // 组件是可复用的vue实例, 与new Vue接收相同的实例,组件模板必须具有根节点
+            Vue.component("button-counter", {  <!-- 第一个参数是组件名称 --> <!-- 全局注册 -->
+                props: ["title"],  <!--props 接收数据 -->
+                data: function () {
+                    return { count: 0}
+                },
+                template: '<div><h1>hi...</h1><button v-on:click="clickfun">{{title}} you click me {{ count }}times. ,</button><slot></slot></slot></div>',
+                methods: {
+                    clickfun: function () {
+                        this.count ++;
+                        this.$emit('clicknow', this.count)
+                    }
+                }
+            })
+            var vm = new Vue({
+                el: "#app",
+                data: {    
+                },
+                methods:{
+                	clicknow : function (e) {
+                		console.log(e);
+                	}
+                },
+                components: {  <!-- 局部注册，还有模块内注册 import ... from ...-->
+                    test: {
+                        template: "<h2>h2....</h2>"
+                    }
+                }
+            });
+        </script>
+	</body>
+</html>
+
+```
