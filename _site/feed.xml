@@ -1,17 +1,1524 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-14T15:46:25+08:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>让我们一起去</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2020/11/14/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-11-14T14:16:11+08:00</published><updated>2020-11-14T14:16:11+08:00</updated><id>http://localhost:4000/jekyll/update/2020/11/14/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2020/11/14/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-14T15:57:37+08:00</updated><id>http://localhost:4000/feed.xml</id><subtitle>让我们一起去</subtitle><entry><title type="html">Python</title><link href="http://localhost:4000/2020/01/01/python.html" rel="alternate" type="text/html" title="Python" /><published>2020-01-01T00:00:00+08:00</published><updated>2020-01-01T00:00:00+08:00</updated><id>http://localhost:4000/2020/01/01/python</id><content type="html" xml:base="http://localhost:4000/2020/01/01/python.html">&lt;h1 id=&quot;1-装饰器&quot;&gt;1 装饰器&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;装饰器用于封装函数或类的代码工具；处理前置条件或运行后清理；接受被装饰的函数作为其位置参数，返回原始参数或其他的调用；&lt;/li&gt;
+  &lt;li&gt;多个装饰器执行顺序：自底向上；函数解析顺序：自内向外；（自底向上装饰、自内向外解析）
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorated_by&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__doc__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;Decorated by decorated_by.&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;                      &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;B&lt;/span&gt;                         &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;A&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorator&lt;/span&gt;              &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorator&lt;/span&gt;             &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;B&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                 &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;            &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;                &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;               &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                 &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;B&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorator&lt;/span&gt;           &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorator&lt;/span&gt;          &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;abcBA&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;                              &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;                              &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Registry&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_functions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;                   &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;       &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;       &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;
+      &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_functions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;decorated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;            &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;     &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;     &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;register&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorated&lt;/span&gt;                                 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;      &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;run_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;                                                          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;return_valuse&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;                           &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_functions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;                 &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+          &lt;span class=&quot;nx&quot;&gt;return_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;  &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;return_values&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;装饰器本身含有参数，需要在包一层，即三层（编译器会自动判断装饰器是否有参数);&lt;/li&gt;
+  &lt;li&gt;第一层是普通方法，用于接收装饰器的参数；第二层是装饰器；第三层是对应的包装函数。每一层都要返回对应包装的函数;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;django&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache_it&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;real_wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;has_key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:;&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Entering&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__name__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;args是一个元组&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;可以直接sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;也可以&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;enumerate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;取出&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;                        &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;是一个字典&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;可以&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kw&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;取出&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;real_wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;import functools 保留被装饰函数的上下文（文档字符串、名字等）&lt;/li&gt;
+  &lt;li&gt;import inspect   获取函数参数（也可以对类函数参数进行判断）&lt;/li&gt;
+  &lt;li&gt;inspect.getcallargs 返回一个将参数名字和值作为键值对的字典；不必检查参数username是基于位置的参数还是基于关键字的参数，而只需在字典中查找即可;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inspect&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;check_is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;functools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wraps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;func_args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inspect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getcallargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func_args&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;food&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;chocolate&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func_args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;nx&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;This user is not allowed to get food&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;functools&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorated&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;functools&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;wraps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ipdb&lt;/span&gt;
+          &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ipdb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;set_trace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;nx&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;This user is not allowed to get food&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;wrapper&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;decorated&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;is_admin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;barfoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;someone&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;hhDo crazy stuff&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;{0} get food&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;__main__&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;barfoo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;food&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h2 id=&quot;装饰器---授权-authorization&quot;&gt;装饰器 -&amp;gt; 授权 (Authorization)&lt;/h2&gt;
+    &lt;p&gt;```
+from functools import wraps&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+&lt;p&gt;def requires_auth(f):
+    @wraps(f)
+    def decorated(&lt;em&gt;args, **kwargs):
+        auth = request.authorization
+        if not auth or not check_auth(auth.username, auth.password):
+            authenticate()
+        return f(&lt;/em&gt;args, **kwargs)
+    return decorated&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 2 魔术方法
+- 魔术方法被设计用于重载Python的操作符或者内置函数；__init__也被称作dunder--init,其中dunder表示Double Underscore;
+- 钩子就是在特定事件发生时，能够为响应事件而调用的代码或函数，回调函数就是钩子的一种类型；
+- 魔术方法都需要特定的函数名称与方法签名（抹些时候方法签名是一个变量），然后该方法就会在特定的情况下被调用;（__eq__, __init__, self)
+- 创建于相关__new__, __init__, __del__;类型转换__str__,__bytes__,__bool__;比较__eq__,__ne__,__le__,__gt__,__add__,__or__,__lshift__
+- python通过dunders提供了一致性的数据模型，以可预知的方式为不同类型的对象互相交互提供纽带，提高了可读性；
+- 如果功能与已经定义的方法匹配，那么实现魔法方法的方式更加可取，而不是自定义一个新的方法名称；
+- 每个模块被导入的时候__name__都绑定为当前模块的名称，特殊的是当模块被直接执行的时候，绑定的就是 __main__
 
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+# 3 元类 Metaclass
+- 负责生成其他类的类就是元类,直接使用type而不是class创建的类；（如果一个会议中对另一个会议进行规划，该会议可以被称作元会议meta-meting)_
+- 当python解释器执行到class Animal(object)代码段时，实际调用的是type的构造函数，type是Python的内置类，该类是其他类对象的默认类；
+- class Animal(object) 等价于 Animal = type('Animala', (object,) {'__init__':init}，...)
+- type是python中的主要元类，也是其他元类的基类；(正如object是类继承链中的最高级，type也是元类层级的最高级)
+- 编写元类，只需要一个继承自type的类；（元类的行为继承自type，任何type的自雷都可以作为元类）
+- python3 推荐使用 class A(metaclass=Meta): 创建元类（Meta是type的子类）；也等效于 class A(object,metaclass=Meta)：的创建方式，由于
+- python3中都是新式类（解析顺序，自下而上、从左到右）而无需显示直接继承自object；（Python2中是 class A(object): __metaclass__ = Meta ）
+- Django 中 class Book（models.Model): ,其中 from django.db import models 的 django.db.models.Models 使用了 ModelBase 元类（这就是一个元类使用示例）
+类定义了其实例的属性和行为，类可以作为创建实例的工厂
+type是Python中的默认类，该类是其他类对象的默认类，即默认元类
+通过type创建类，接受三个位置参数：name 类的名称、bases 基类元组和attrs 属性字典
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;def init(self, name):
+    self.name = name
+def eat(self):
+    pass
+def go_to_eat(self):
+    pass&lt;/p&gt;
 
-&lt;p&gt;Where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;Animal = type(‘Animal’, (object,), {‘&lt;strong&gt;doc&lt;/strong&gt;’:’A class representing an arbitrary animal’, ‘&lt;strong&gt;init&lt;/strong&gt;‘:init, ‘eat’:eat, ‘go_to_eat’:go_to_eat,})&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;def meow(self):
+    return None
+Cat = type(‘Cat’, (Animal,), {‘meow’: meow,})  # 创建子类&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;object 是类继承链中的最高级， type 是元类层级的最高级
+大多数代码使用传统的类与对象的结构都没有问题，并不真的需要使用元类；但当适合使用元类的
+时候，元类能够让代码变得更加容易理解：
+- 说明性类声明：使用自定义元类最常见的原因是在类声明与类结构直接创建描述，尤其创建供其
+他人使用的API的是时候
+- 类验证：如果一个类必须遵循特定的接口，元类将会是强制使其符合规范的有效方式，如一个类
+需要并且只设置两个参数中的一个
+- 非继承属性：元类作为一种工具，使类中特定的属性不会自动继承
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+# 4 闭包
+- 调用一个函数，没有返回一个值，而是返回了其内部的一个函数；返回的内部函数就是闭包；内部函数的__closure__属性查看函数是否闭包；
+- 如果主函数内的闭包并没有使用外部变量，就不属于闭包的范畴，闭包的__closure__为None；（闭包需要使用外部函数的变量）
+- 如果主函数没有return内部函数，就不存在闭包，__closure__属性也不在存在；（闭包要返回内部函数）
+- 在闭包中，闭包与外部变量进行绑定，即在内存中进行了保留；如果内部函数要修改这个变量的值，需要用nonlocal关键词进行声明；
+``` javascript
+def func(a, b):
+    def line(x):
+        nonlocal a
+        a = 3
+        return a * x - b
+    return line
+line = func(2, 3)
+print(line(5)) # 12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;python 闭包的 late-binding，会导致用到的变量的值是在内层函数执行的时候才去查询的,此时for循环已经执行完毕，i最后值是3；
+    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multipliers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;multipliers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()]&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h1 id=&quot;5-python-tips&quot;&gt;5 python tips&lt;/h1&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;h3 id=&quot;猴子补丁monkey-patching还有mock的方式&quot;&gt;猴子补丁(monkey patching)，还有mock的方式&lt;/h3&gt;
+
+&lt;p&gt;猴子补丁的意思是在程序运行时(runtime)修改某些代码; 打个比方，你有一个类，里面有个叫get_info的函数会调用一个API并返回相应的数据。如果我们想测试它，可以把API调用替换成一些测试数据。&lt;/p&gt;
+
+&lt;h3 id=&quot;python-debugging-pdb&quot;&gt;python debugging pdb&lt;/h3&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;python&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pdb&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;py&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;pdb&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;make_bread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;pdb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;set_trace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;I don't have time&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;make_bread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;c: 继续执行&lt;/li&gt;
+  &lt;li&gt;w: 显示当前正在执行的代码行的上下文信息&lt;/li&gt;
+  &lt;li&gt;a: 打印当前函数的参数列表&lt;/li&gt;
+  &lt;li&gt;s: 执行当前代码行，并停在第一个能停的地方（相当于单步进入）&lt;/li&gt;
+  &lt;li&gt;n: 继续执行到当前函数的下一行，或者当前行直接返回（单步跳过）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;简单的sql注入攻击&quot;&gt;简单的sql注入攻击&lt;/h3&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;假设sql是搜索用户A的文章&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;owner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+
+&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;例如把A&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;改成A&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt; or 1=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;获取所有用户的文章&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;owner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;python的MySQLdb模块中有专门转义的函数,预防这种攻击&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MySQLdb&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;MySQLdb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;escape_string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;safe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a' or 1 '&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;' or 1 &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;6-rsa-aes-支付对接的加密部分&quot;&gt;6 RSA AES 支付对接的加密部分&lt;/h1&gt;
+&lt;p&gt;RSA: 非对称加密算法，即可以用公钥加密然后私钥解密（传递信息）、也可以私钥加密然后公钥解密（数字签名）&lt;/p&gt;
+
+&lt;p&gt;AES: 对称加密，A用密码对数据进行加密，B用同样的密码进行解密&lt;/p&gt;
+
+&lt;p&gt;支付业务中结合两者：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;接口参数先进行AES对称加密&lt;/li&gt;
+  &lt;li&gt;加入业务字段后组成json，与上一步的加密数据一起生成签名（即RSA非对称加密）&lt;/li&gt;
+  &lt;li&gt;签名与业务json整体作为api数据字段
+```javascript
+def func(merchant_no, origin_merchant_no, amount):
+  data = {
+      ‘merchantNo’: merchant_no,
+      ‘originMerchantNO’: origin_merchant_no,
+      ‘amount’: amount
+  }
+  data = self.aes_encrypt(data)  # 步骤一
+  query = {
+      ‘service’: ‘service_flag_str’,
+      ‘data’: data
+  }
+  sign = self.generate_sign(query)  # 步骤二
+  query[‘sign’] = sign
+  resp = requests.post(url_str, data=query)  # 步骤三&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;import-uuid---uuiduniversally-unique-identifier-全局唯一标识符&quot;&gt;import uuid  # UUID(Universally Unique IDentifier) 全局唯一标识符&lt;/h1&gt;
+&lt;h1 id=&quot;generate_reqsn--uuiduuid1hex&quot;&gt;generate_reqsn = uuid.uuid1().hex&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![image 20180223-1](https://github.com/Django-27/workspace/blob/master/pic/rsa-aes-python.png)
+```javascript
+# pycrypto (2.6.1) M2Crypto (0.21.1)
+from Crypto.PublicKey import RSA
+from Crypto.Cipher import PKCS1_v1_5
+from Crypto.Cipher import AES
+import base64
+import hashlib
+import uuid
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;uuid做主键，确定uuid非常长，占用内存，索引有性能问题&lt;/li&gt;
+  &lt;li&gt;redis incr，单线程可以保证唯一，但是有单点性能问题&lt;/li&gt;
+  &lt;li&gt;数据库单独建一个表，插入删除都要访问，也有单点问题；加入Master-Slave可以解决单点问题，但是不能解决1：1的访问压力问题&lt;/li&gt;
+  &lt;li&gt;Twitter的分布式自增ID算法Snowflake（雪花算法）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;7-python-sum-on-keys-for-list-of-dictionaries-link&quot;&gt;7 Python sum on keys for List of Dictionaries &lt;a href=&quot;https://stackoverflow.com/questions/8584504/python-sum-on-keys-for-list-of-dictionaries&quot;&gt;link&lt;/a&gt;&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;x = [{'d': 1, 'p': 0}, {'d': 2, 'p': 5}, {'d': 3, 'p': 2}]
+y = [{'d': 1, 'p': 5}, {'d': 3, 'p': 4}]
+x_y = x + y
+# print(x_y)
+# import pandas as pd
+# df = pd.DataFrame(x_y)
+# s = df.groupby(['d']).sum()
+from collections import defaultdict
+c = defaultdict(int)
+for d in x_y:
+    c[d['d']] += d['p']
+print c
+ret = [{'dealer_id': d, 'price': p} for d, p in c.items()]
+print(ret)
+
+ret = sorted(info.items(), key=lambdax:x['price'])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;db.getCollection('bi_datav_order_info').aggregate([{
+    '$match': {
+        'start_time': {  
+            '$gte': ISODate('2016-01-05T09:22:51Z')},
+        'end_time': { 
+           '$lte': ISODate('2017-12-05T09:22:51Z')},
+        'dealer_id': { 
+            '$gt': 0}
+        }
+    },{
+        '$group': {
+            '_id': '$dealer_id',
+            'price': {
+                '$sum': '$price'
+            }
+        }
+    }
+])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;8-python-字典方面的一些操作&quot;&gt;8 Python 字典方面的一些操作&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;d = [{'price': 5, 'dealer_id': 1}, {'price': 5, 'dealer_id': 2}, {'price': 6, 'dealer_id': 3}]
+s = [{'dealer_id': 1, 'name': 'hailong'}, {'dealer_id': 2, 'name': 'wiqiya'}, {'dealer_id': 6, 'name': 'qy'}]
+m = {item['dealer_id']: item['name'] for item in s}
+# m = {1: 'hailong', 2: 'wiqiya', 6: 'qy'}
+# {'price': item['price'], 'name':m[item['dealer_id']] for item in d}
+ret = []
+for item in d:
+    ret.append({
+        'price': item['price'], 
+        'dealer_name': m.get(item['dealer_id']) or 0
+    })
+print(ret)
+
+x = [{'d': 1, 'p': 0}, {'d': 2, 'p': 5}, {'d': 3, 'p': 2}]
+y = [{'d': 1, 'p': 5}, {'d': 3, 'p': 4}]
+x_y = x + y
+# print(x_y)
+# import pandas as pd
+# df = pd.DataFrame(x_y)
+# s = df.groupby(['d']).sum()
+from collections import defaultdict
+c = defaultdict(int)
+for d in x_y:
+    c[d['d']] += d['p']
+print c
+ret = [{'dealer_id': d, 'price': p} for d, p in c.items()]
+print(ret)
+
+x = { 'apple': 1, 'banana': 2 }
+y = { 'banana': 10, 'pear': 11 }
+from collections import Counter
+print(Counter(X) + Counter(Y))
+
+items = [ {'id': 1, 'p': 2}, {'id':2, 'p': 0}, {'id':3, 'p': 5}]
+items.sort(key = lambda x: x['p'])
+print(items)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;9-fluent-python-一摞-python-风格的纸牌&quot;&gt;9 Fluent Python 一摞 Python 风格的纸牌&lt;/h1&gt;
+&lt;p&gt;2, 3, 4, 5, 6, 7, 8, 9, J, Q, K, A  and  spades 黑桃, diamonds 方片, clubs 梅花, hearts 红桃&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    import collections
+    
+    Card = collections.namedtuple('Card', ['rank', 'suit'])  # 创建具名元祖，参数一是类名，参数二是类的各个字段的名字 实现构造了一个简单的类表示一张纸牌， nametuple 用于构建只有少数属性但是没有方法的对象， 如数据库的条目
+    
+    class FrenchDeck:
+        ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+        suits = 'spades diamonds clubs hearts'.split()
+        
+        def __init__(self):
+            self._cards = [Card(rank, suit) for suit in self.suits 
+                                            for rank in self.ranks]  # 返回的是一个列表集合
+        
+        def __len__(self):
+            return len(self._cards)
+        
+        def __getitem__(self, position):
+            return self._cards[position]  # 支持切片
+            
+    
+    &amp;gt;&amp;gt;&amp;gt; beer_card = Card('7', 'diamonds')
+    &amp;gt;&amp;gt;&amp;gt; beer_card
+    Card(rand='7', suit='diamonds')  #  利用 nametuple 得到了一张纸牌
+    
+    &amp;gt;&amp;gt;&amp;gt; deck = FrenchDeck()
+    &amp;gt;&amp;gt;&amp;gt; len(deck)
+    52  # 得到了一叠纸牌的个数, 由 __len__ 方法提供
+    
+    &amp;gt;&amp;gt;&amp;gt; deck[0], deck[-1]
+    Card(rand='2', suit='spades'), Card(rank='A', suit='hearts')  # 由 __getitem__ 方法提供
+    
+    &amp;gt;&amp;gt;&amp;gt; from random import choice
+    &amp;gt;&amp;gt;&amp;gt; choice(deck)
+    Card(rank='k', suit='spades')  # 实现从序列中随机的抽取一张纸牌
+    
+    &amp;gt;&amp;gt;&amp;gt; deck[:3]  # 找到前三张牌
+    &amp;gt;&amp;gt;&amp;gt; deck[12::13]  # 找到牌面是A的所有牌
+    &amp;gt;&amp;gt;&amp;gt; for card in deck:  # 还可以迭代，逆迭代 for card in reversed(deck):
+            print(card)
+    &amp;gt;&amp;gt;&amp;gt; Card('Q', 'hearts') in deck  # 还可以使用in运算符，返回值为 True 和 False；如果一个集合没有实现 __contains__ 方法，那么就是做一次顺序迭代搜索
+   
+    suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)  # 定义大小顺序
+    def spades_high(card):  # 排序函数
+        rank_value = FrenchDeck.ranks.index(card.rank)
+        return rank_value * len(suit_values) + suit_vlues[card.suit]
+    
+    for card in sorted(deck, key=spades_high):
+        print(card)  # 输出排序后的结果
+        
+    &amp;gt;&amp;gt;&amp;gt; from random import shuffle
+    &amp;gt;&amp;gt;&amp;gt; l = list(range(10)
+    &amp;gt;&amp;gt;&amp;gt; shuffle(l)  # 原地打乱序列，直接 shuffle(deck) 会报错，FrenchDEck 不支持为元素赋值；深层的原因是由于 shuffle 函数要调换集合中元素的位置，
+                    # 而 FrenchDeck 只实现了不可变的序列协议，可变的序列还必须提供 __setitem__ 方法
+    &amp;gt;&amp;gt;&amp;gt; l
+    [1, 2, 3, 9, 7, 4, 6, 0, 8, 5]
+    
+    # 实现随机洗牌
+    &amp;gt;&amp;gt;&amp;gt; def set_card(deck, position, card):  # 由于 python 是动态语言，可以再运行时修正；也称猴子补丁： 在运行时修改类或模块， 而不改动源码。
+        deck._cards[position] = card
+    &amp;gt;&amp;gt;&amp;gt; FrenchDeck.__setitem__ = set_card
+    &amp;gt;&amp;gt;&amp;gt; shuffle(deck)
+    
+    # random.shuffle 函数不关心参数的类型，只要对象实现了可变对象协议即可，即是一种鸭子类型；下面就按照这个方法更改
+    # 在类中添加 def __setitme__(self, position, card):
+                    self._cards[position] = card
+    &amp;gt;&amp;gt;&amp;gt; deck = FrenchDeck()
+    &amp;gt;&amp;gt;&amp;gt; random.shuffle(deck)  # 这就完成了原地的打乱
+    &amp;gt;&amp;gt;&amp;gt; decck[:3]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;10-fluent-python&quot;&gt;10 Fluent Python&lt;/h1&gt;
+&lt;p&gt;内置函数 repr， 可以将一个对象以字符串的形式表达出来， 内部通过 &lt;strong&gt;repr&lt;/strong&gt; 特殊方法实现
+%符号的字符串格式中，%r 即表示对象；str.format中也是使用了repr将 !r 变为字符串
+特殊方法 &lt;strong&gt;repr&lt;/strong&gt; 和 &lt;strong&gt;str&lt;/strong&gt;， 前者方便了调试和记录日志，后者方便了给终端看&lt;/p&gt;
+
+&lt;p&gt;容器序列：list、tuple、collections.deque 可以放不同类型的数据，存的是任意类型对象的引用
+扁平序列: str、bytes、bytearray、memoryview、array.array 只能放同一种类型，存的是值；内存连续；只能存放字符、字节这种基础类型&lt;/p&gt;
+
+&lt;p&gt;按照能否被修改：
+可变序列（MutableSquence）：list、bytearray、array.array、collections.deque、memoryview
+不可变序列（Sequence）：tuple、str、bytes&lt;/p&gt;
+
+&lt;p&gt;列表推导式(list comprehension, listcomps):
+生成器表达式(generator expression, genexps):&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    symbols = '$¢£¥€¤'
+    &amp;gt;&amp;gt;&amp;gt; tuple(ord(symbol) for symbol in symbols) ➊
+    (36, 162, 163, 165, 8364, 164)
+    &amp;gt;&amp;gt;&amp;gt; import array
+    &amp;gt;&amp;gt;&amp;gt; array.array('I', (ord(symbol) for symbol in symbols)) ➋
+    array('I', [36, 162, 163, 165, 8364, 164])  # 参数 I 指定数组中数字的存储方式
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;使用切片对象slice&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    s = '12345'
+    ss = slice(2, 3)
+    s[ss]  &amp;gt;&amp;gt; '3'
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;list.sort 就地排序， 返回的是None； random.shuffle 函数也是这样
+sorted 函数会返回一个新建的列表
+list.sort 和 sorted 都有两个可以选择的参数，参数 reverse 如果被设置为 True，则将进行降序，默认值是 False；参数 key 是一个只有一个参数的函数，会被用在序列里的每一个元素上，例如 key=str.lower, key=len, 默认值是恒等函数，即默认用元素自己的值排序
+py3.4 开始，数组类型不在支持如list.sort()这种就地排序方法；要给数组排序，需用sorted函数新建一个数组 a = array.array(a.typecode, sorted(a))&lt;/p&gt;
+
+&lt;p&gt;import bisect 二分查找算法模块（bisection algorithms）
+bisect.bisect(haystack, needle) 在 haystack （干草垛）里搜索 needle (针)的位置，满足的条件是把 needle 插入这个位置后 haystack 还能保持升序
+bisect.insert(index, needle) 插入元素；即先查找位置，再插入元素&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    # 分数与成绩的查询
+    &amp;gt;&amp;gt;&amp;gt; def grade(score, breakpoints=[60, 70, 80, 90], grades='FDCBA'):
+    ...     i = bisect.bisect(breakpoints, score)
+    ...     return grades[i]
+    ...
+    &amp;gt;&amp;gt;&amp;gt; [grade(score) for score in [33, 99, 77, 90, 89, 90, 100]]
+    ['F', 'A', 'C', 'A', 'B', 'A', 'A']
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例子：创建一个有1000万个随机浮点数的数组，存放到文件，读入到数组&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    from array import array
+    from random import random
+    
+    floats = array('d', (random() for i in range(10**7)))  # 1000万个浮点数，在二进制文件中占用 8*10^7个字节，每个浮点数8个字节，如果是文本文件的方式需要181515739个字节
+    floats[-1]  &amp;gt;&amp;gt;&amp;gt; 0.07802343889111107
+    
+    fp = open('floats.bin', 'wb')  # 以二进制的方式写入，要比文本方式的写入快7倍
+    floats.tofile(fp)  # 还有pickle.dump处理浮点数数组速度相当快、几乎相当
+    fp.close()
+    
+    floats2 = array('d')
+    fp = open('floats.bin', 'rb')  #  从二进制文件中读取，用时0.1秒，比从文本文件中读取快60倍
+    floats2.fromfile(fp, 10**7)
+    fp.close()
+    floats2[-1]  &amp;gt;&amp;gt;&amp;gt; 0.07802343889111107
+    floats2 == floats  &amp;gt;&amp;gt;&amp;gt; True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;memoryview 内存视图；是一个内置类，可以在不复制内容的情况下操作同一个数组的不同切片
+memoryview.cast 可以使用不同的方式读写同一块内存数据，而且内容自己不会随意移动&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    nums = array.array('h', [-2, -1, 0, 1, 2])
+    memv = memoryview(nums)
+    len(memv)  &amp;gt;&amp;gt;&amp;gt; 5
+    memv[0]  &amp;gt;&amp;gt;&amp;gt; -2
+    memv_oct = memv.cast('B')
+    memv_oct.tolist()  &amp;gt;&amp;gt;&amp;gt; [254, 255, 255, 255, 0, 0, 1, 0, 2, 0]  # 以列表的形式查看memv_oct的内容
+    memv_oct[5] = 4  # 将占2个字节的整数的高位字节改为4，所以这个有符号的整数值变为1024
+    nums  &amp;gt;&amp;gt;&amp;gt; arrray('h', [-2, -1, 1024, 1, 2])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;内部采用散列表实现字典和集合，并进行了高度的优化
+如果一个对象是可散列的，那么在这个对象的生命周期中，散列值是不变的，对象需要实现__hash__() 方法，实现 &lt;strong&gt;qe&lt;/strong&gt;() 方法已达到可以与其他对象相互比较&lt;/p&gt;
+
+&lt;p&gt;原子不可变数据类型(str、bytes和数值类型)都是可散列类型，frozenset也是可散列的，元组在包含的所有元素都是可散列类型的情况下才是可散列的；散列值就是 id() 函数的返回值&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; tt = (1, 2, (30, 40))
+&amp;gt;&amp;gt;&amp;gt; hash(tt) 
+8027212646858338501
+&amp;gt;&amp;gt;&amp;gt; t1 = (1, 2, [30, 40])
+TypeError: unhashable type: 'list'
+&amp;gt;&amp;gt;&amp;gt; tf = (1, 2, frozenset([30, 40]))
+&amp;gt;&amp;gt;&amp;gt; hash(tf)
+-4118419923444501110
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;构建字典的方式：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; a = dict(one=1, two=2, three=3)
+&amp;gt;&amp;gt;&amp;gt; b = {'one':1, 'two':2, 'three':3}
+&amp;gt;&amp;gt;&amp;gt; c = dict(zip(['one', 'two', 'three'], [1, 2, 3]))
+&amp;gt;&amp;gt;&amp;gt; d = dict([('one', 1), ('two', 2), ('three', 3)])
+&amp;gt;&amp;gt;&amp;gt; e = dict({'one':1, 'two':2, 'three':3})
+&amp;gt;&amp;gt;&amp;gt; info = [('one', 1), ('two', 2), ('three', 3)]
+&amp;gt;&amp;gt;&amp;gt; f = {m: n for m, n in info}
+&amp;gt;&amp;gt;&amp;gt; a == b == c == d == e == f
+True
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;三种映射类型：dict、collections.defaultdict 和 collections.OrderedDict&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;d.copy 浅拷贝&lt;/li&gt;
+  &lt;li&gt;d.popitem() 随机返回一个键值对并从字典中移除它&lt;/li&gt;
+  &lt;li&gt;d.pop(k, [default]) 返回k对应的值，并移除键值对，如果没有这个键返回None或default&lt;/li&gt;
+  &lt;li&gt;d.values() 返回字典里的所有值&lt;/li&gt;
+  &lt;li&gt;大多数的映射类型都提供两个强大的功能方法：setdefault 方法可以用来更新字典里存放的可变值，避免了重复的键搜索；update 方法可以进行批量的操作，插入新值或更新已有的键值对，参数可以是（key，value）这种键值对的可迭代对象或关键字参数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;collections.OrderDict 添加键的时候会保持顺序，则迭代的次序也是一样的，popitem 方法默认删除并返回字典里最后一个元素， d.popitem(last=False) 则删除并返回第一个被添加进去的元素&lt;/p&gt;
+
+&lt;p&gt;collections.ChainMap 可容纳数个不同类型的映射对象，查找时当做一个整体进行查找，直到找到w&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import builtins, collections
+pylookup = collections.ChainMap(locals(), globals(), vars(builtins))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;collections.Counter 整数计数器，每次更新一个键的时候都会增加这个计数器，可以用来给可散列对象计数&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; ct = collections.Counter('abracadabra')
+&amp;gt;&amp;gt;&amp;gt; ct.update('aaaaazzz')
+&amp;gt;&amp;gt;&amp;gt; ct.most_common(2)  # 返回最常见的n个键和他们的计数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;collections.UserDict 用于让用户继承写子类，创建自定义映射类型&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import collections
+
+class StrKeyDict(collections.UserDict):  # 都会将非字符串的键转换成字符串
+    
+    def _missing__(self, key):
+        if isinstance(key, str):
+            raise KeyError(key)
+        return self[str(key)]
+    
+    def __contains__(self, key):
+        return str(key) in self.daa
+    
+    def __setitem__(self, key, item):
+        self.data[str(key)] = item
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;types.MappingProxyType 给这个类一个映射，返回一个只读的映射视图，即用户不能够修改&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from type import MappingProxyType
+d = {1: 'A'}
+d_proxy = MappingProxyType(d)
+d_proxy -&amp;gt; mappingproxy({1: 'A'})  # 返回一个只读视图
+d_proxy[1] -&amp;gt; 'A'
+d_proxy[2] = x  -&amp;gt; TypeError 不支持元素赋值
+d[2] = 'B' -&amp;gt; mappingproxy({1:'A', 2:'B'}） # 只读视图不能修改，但也是动态的，可以对原视图修改
+d_proxy[2] -&amp;gt; 'B'  # 原视图修改，在只读视图上也是可以看到，即任何原视图的改变都会反馈到它的上面
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;集合，本质是许多唯一对象的聚焦，这一特性表示集合可用于去重；集合中的元素必须是可散列的，set 类型本身是不可散列的，但fronzenset 可以&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; frozenset(range(10))
+frozenset({0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;补充&quot;&gt;补充&lt;/h4&gt;
+&lt;p&gt;‘字符’的最佳定义就是Unicode字符，py3中str对象中获取的元素就是Unicode字符，相当于py2中的unicode对象中获取的元素，py2中str对象获得的是原始字节序列&lt;/p&gt;
+
+&lt;p&gt;将unicode想成人类可读的文本，而字节序列想成晦涩难懂的机器磁芯转储
+将码位(str)转换为字节序列(bytes)的过程是编码encode，把字节序列转换成码位的过程是解码decode；有一个error的参数，可以是error=’ignore’将跳过无法编码的字符，error=’replace’将无法编码的字符替换为’?’
+bytes和bytearray对象的各个元素是介于0-255（包含）之间的整数，py2中的str对象是单个的字符&lt;/p&gt;
+
+&lt;p&gt;内置归约函数 all(iterable) 如果每个元素都是真值，返回 True；all([]) 返回 True
+内置归约函数 any(iterable) 如果有一个元素是真实，返回 True；any([]) 返回 False&lt;/p&gt;
+
+&lt;h1 id=&quot;11-fluent-python-策略模式&quot;&gt;11 Fluent Python 策略模式&lt;/h1&gt;
+&lt;p&gt;策略模式是定义一系列算法，把它们一一封装起来，并且使它们可以互相替换；使得算法可以独立于使用它们的客户而变化
+如：电商领域中，根据客户的属性或订单中的商品计算折扣；下面是折扣规则（每一个订单只能享受一个折扣）：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;有1000或以上积分的顾客每一个订单享5%折扣&lt;/li&gt;
+  &lt;li&gt;同一个订单中，单个商品的数量达到20个或以上，享10%折扣&lt;/li&gt;
+  &lt;li&gt;订单中的不同商品达到10个或以上，享7%折扣；策略模式的UML类图如下
+&lt;img src=&quot;https://github.com/Django-27/workspace/blob/master/pic/fluent-python.png&quot; alt=&quot;130&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上下文：将算法委托给实现不同算法的可互换组件，它提供服务，在这个电商示例中，上下文是Oder，它会根据不同的算法计算促销价格
+策略：实现不同算法的组件共同的接口，这个例子中是抽象类 Promotion&lt;br /&gt;
+具体策略：即策略的具体子类，如 fidelityPromo、BulkPromo 和 LargeOrderPromo&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from abc import ABC, abstractmethod
+from collections import namedtuple
+
+Customer = namedtuple('Customer', 'name fidelity')
+
+class LineItem:
+    
+    def __init__(self, producct, quantity, price):
+        self.product = producct
+        self.quantity = quantity
+        self.price = price
+    
+    def total(self):
+        return self.price * self.quantity
+    
+    
+class Oder:  # 上下文
+    
+    def __init__(self, ccustomer, cart, promotion=None):
+        self.customer = customer
+        self.cart = list(cart)
+        self.promotion = promotion
+    
+    def total(self):
+        if not hasattr(self, '__total'):
+            self.__total = sum(item.total() for item in self.cart)
+        return self.__total
+        
+    def __repr__(self):
+        fmt = '&amp;lt;Order total: {:.2f} due: {:.2f}&amp;gt;'
+        return fmt.format(self.total(), self.due())
+        
+        
+cclass Promotion(ABC):  # 策略，抽象基类，Abstract Base Class
+    
+    @abstractmethod
+    def discount(self, order):
+        &quot;&quot;&quot; 韩慧这个金额（正值） &quot;&quot;&quot;
+    
+class FidelityPromo(Promotion):  # 策略一
+    
+    def disccount(delf, order):
+        return order.total() * .05 if order.customer.fidelity &amp;gt;= 1000 else 0
+
+class BulkItemPromo(Promotion):  # 策略二
+    
+    def discount(self, order):
+        discount = 0
+        for item in order.cart:
+            if item.quantity &amp;gt;= 20:
+                discount += item.total() * .1
+        return discount
+        
+class LargeOrderPromo(Promotion):  # 策略三
+    
+    def discount(self, order):
+        distinct_items = {item.product for item in order.cart}
+        if len(distince_itmes) &amp;gt;= 10:
+            return order.total() * .07
+        return 0
+   
+   
+promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+def best_promo(order):  # 选择最佳的折扣
+    return max(promo(order) for promo in promos)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;装饰器：是可调用对象，其参数时另一个函数；装饰器可能会处理被装饰的函数，然后把它返回，或者将其替换成另一个函数或可调用对象；
+装饰器在加载模块是立即执行，被装饰的函数只在明确调用时运行&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;regestry = []  # 报存被装饰函数的引用
+def register(func):
+    print('running register(%s)' % func)
+    registry.append(func)
+    return func
+@register
+def f1():
+    print('running f1()')
+@register
+def f2():
+    print('running f2()')
+if __name__ == '__main__':
+    print('running main()')
+    print('registry -&amp;gt;', registry)
+    f1()
+    f2()
+    print(registry)
+
+运行后： 
+running register(&amp;lt;function f1 at 0x00000000029F5510&amp;gt;)  # 表明模块加载是立即执行
+running register(&amp;lt;function f2 at 0x00000000029F5598&amp;gt;)
+running main()
+registry -&amp;gt; [&amp;lt;function f1 at 0x00000000029F5510&amp;gt;, &amp;lt;function f2 at 0x00000000029F5598&amp;gt;]
+running f1()  # 表明只有调用时执行
+running f2()
+[&amp;lt;function f1 at 0x0000000002535510&amp;gt;, &amp;lt;function f2 at 0x0000000002535598&amp;gt;]
+
+改进之前的电商折扣促销模式
+promos = []
+def promotion(promo_func):
+    promos.append(promo_func)
+    return promo_func
+@promotion
+def fidelity(order):
+    return order.total() * .05 if order.customer.fidelity &amp;gt;= 1000 else 0
+好处是只要是定义的促销折扣，都会自动填充到用于判断哪个折扣最大的promos列表中，避免了人为可能的忘记；若要临时禁用哪个促销策略只要注释掉装饰器；折扣促销可以定义在系统的任何地方只要使用@promotion装饰即可
+
+
+def make_averager():
+    
+    series = []                    -&amp;gt; 这个整体是一个 闭包， series 是一个自由变量
+                                   -&amp;gt; 
+    def averager(new_value):       -&amp;gt; averager的闭包延伸到了函数的作用域之外，包含自由变量series的绑定
+        series.append(new_value)   -&amp;gt; 
+        total = sum(series)        -&amp;gt;
+        return total / len(series) -&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;闭包：是一种函数，它会保留定义函数时存在的自由变量的绑定，这样调用函数时，虽然定义作
+      用域不可用了，但是任然可以使用那些绑定 
+闭包：只有涉及嵌套函数时才有闭包问题；闭包延伸了作用域的函数，其中包含函数定义体中引
+      用、但不在定义体中定义的非全局变量；即它能访问定义体之外 定义的非全局变量
+（注意：只有嵌套在其它函数中的函数才可能需要处理不在全局作用域中的外部变量）&lt;/p&gt;
+
+&lt;p&gt;补充：使用类的 &lt;strong&gt;new&lt;/strong&gt; 方法（先调用__new__产生一个对象，再__init__初始化这个对象）实现单例模式
+（消失的请求数：count+=1 单线程没有问题，多线程下要考虑这是三个步骤，取值、加一、写到内存，所以多线程下不是线程安全的）
+（意外怀孕：线程A在判断 cls._singleton 是 False后，在 &lt;strong&gt;new&lt;/strong&gt; 之前，线程B也进行判断，也进去了，这样两个线程都会执行创建）&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class BaeController(object):
+    _singleton = None
+    def __new__(cls, *a, **k):
+        if not cls._singleton:  # 如果实例对象不存在，则创建后再返回；否则，直接返回该实例
+            cls._singleton = object.__new__(cls, *a, **k)
+        return cls._singleton
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;下面写一个线程安全的单例&lt;/p&gt;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;threading&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;synchronized&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__lock__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Lock&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;过锁来保证多线程的情况下同一时刻只有一个线程访问&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lock_func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__lock__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;lock_func&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Singleton&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;None&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;synchronized&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__new__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;kwargs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;nx&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__new__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;在python3中&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;，&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;调用父类的方法是用super&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;来调用&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;instance&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;其他例子工厂策略装饰器模式&quot;&gt;其他例子（工厂、策略、装饰器模式）&lt;/h2&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;################## 1 简单工厂类 ##################
+class Factory(object):
+    def __init__(self, type):
+        self._op_dict = {
+            '+' : AddOperator,
+            '-' : SubOperator,
+        }
+        
+        self.obj = self._op_dict[type]()
+        
+    def get_obj(self):
+        return self.obj
+    
+################## 客户端代码 ##################
+opera1 = Factory('+').get_obj()
+opera2 = Factory('-').get_obj()
+################## 2 策略模式， 商场收费接口类 ##################
+class Cash(object):
+    def __init__(self):
+        pass
+    def get_result(self, a):
+        pass
+
+################## 商场收费具体类 ##################
+class DazheStrategy(Cash):
+    def get_result(self, a):
+        return a*0.8
+        
+class ManjianStrategy(Cash):
+    def get_result(self, a):
+        return a-50
+
+
+################## 客户端代码-1 ##################
+## Context类
+class CashContext(object):
+    def __init__(self, s_obj):
+        self.straer = s_obj
+        
+    def get_resume_money(self, money):
+        return self.straer.get_result(money)
+        
+stra_dict = {
+    'dazhe' : DazheStrategy,
+    'manjian' : ManjianStrategy,
+}
+
+rel_obj1 = CashContext(stra_dict['dazhe']())
+rel_obj2 = CashContext(stra_dict['manjian']())
+
+print rel_obj1.get_resume_money(200)
+print rel_obj2.get_resume_money(200)
+
+################## 客户端代码-2 ##################
+## Factory类
+class Factory(object):
+    def __init__(self, type):
+        self.dict_s = {
+            'dazhe' : DazheStrategy,
+            'manjian' : ManjianStrategy,
+        }
+        self.obj = self.dict_s[type]()
+        
+    def get_obj(self):
+        return self.obj
+        
+rel_obj1 = Factory('dazhe').get_obj()
+rel_obj2 = Factory('manjian').get_obj()
+    
+print rel_obj1.get_result(200)
+print rel_obj2.get_result(200)
+################## 3 装饰器模式， component类 ##################
+class Person(object):
+    def __init__(self, name):
+        self.name = name
+        
+    def show(self):
+        print &quot;decorate's&quot;, self.name
+        
+################ decorator抽象类 ################
+class Finery(object):
+    def __init__(self):
+        self.person = None
+        
+    def decorate(self, person_obj):
+        self.person = person_obj
+        
+    def show(self):
+        if self.person != None:
+            self.person.show()
+            
+################ decorator具体类 ################
+class Tshirts(Finery):
+    def show(self):
+        print &quot;------------1&quot;
+        super(Tshirts, self).show()
+        
+class Kz(Finery):
+    def show(self):
+        print &quot;------------2&quot;
+        super(Kz, self).show()
+        
+class hehe(Finery):
+    def show(self):
+        print &quot;------------3&quot;
+        super(hehe, self).show()
+        
+################## 客户端代码 ##################
+cs = Person('caoshuai')
+ts = Tshirts()
+kkzz = Kz()
+he = hehe()
+
+ts.decorate(cs)
+kkzz.decorate(ts)
+he.decorate(kkzz)
+
+he.show()
+
+################## 输出的结果 ##################
+c:\Users\caoshuai\Desktop&amp;gt;python linshi.py
+------------3
+------------2
+------------1
+decorate's caoshuai
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;12-python-进程-线程-协程&quot;&gt;12 Python 进程 线程 协程&lt;/h1&gt;
+&lt;p&gt;线程：是轻量级的，相互之间易于通信；多线程适合解决由于网络、磁盘等资源造成的I/O阻塞问题，它利用了等
+待I/O请求完成被阻塞而导致的CPU空闲时间；不适用于计算密集型的工作&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://github.com/Django-27/workspace/blob/master/pic/multiprocessing_pool.png&quot; alt=&quot;multiprocessing_pool&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;就绪状态：进程已经分配到处理器（CPU）以外的所有资源&lt;/li&gt;
+  &lt;li&gt;执行、运行状态：获取到了处理器（CPU）的使用权，其程序正在处理器上运行&lt;/li&gt;
+  &lt;li&gt;阻塞状态：当程序由于等待某个事件而无法执行的时候，便放弃处理器而进入阻塞状态（等IO、等信号、sleep、等等）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;threads = []
+for url in urls:
+    t = threading.Thread(target=func, args=(url,)) # threading模块对thread模块进行了封装，更高级
+    t.setDaemon(True)
+    threads.append(t)
+    s.start() # threading.Thread 生成线程实例，实例生成后并不是马上执行，需要调用start启动线程
+for t in threads:
+    t.join() # join的原理，以此检查线程池中线程是否结束，没有结束就阻塞直到线程结束，否则跳转执行下一个线程的join函数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;上面的为每一个url创建了一个线程，如果url太多，那么创建和销毁线程也将是一个比较重的开销
+下面使用线程池，重用线程池中的线程：&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from multiprocessing.dummy import Pool as ThreadPool
+pool = ThreadPool(5)
+pool.map(func, urls)  # param urls is a List
+pool.close()
+pool.join()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;线程间如果要共享数据，就需要加锁保护，取保同一个时刻只能有一个线程访问这个数据
+线程同步原语包括，锁（Lock）、信号量（Semaphore）、条件变量（Condition）和事件（Event）
+最好是使用Queue模块，它是线程安全的，可以有效降低程序复杂度、代码清晰、可读性强&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import Queue
+def save_info_with_queue(queue):
+    while True:
+        url = queue.get()
+        do something
+        queue.task_done()  # 向任务已经完成的队列发送一个信号，只有这样才能在最
+                             后join方法时知道队列中的任务是否都执行完了
+def use_thread_with_queue():
+    queue = Queue.Queue()
+    for i in range(5):
+        t = threading.Thread(target=save_info_with_queue, args=(queue,))
+        t.setDaemon(True)
+        t.start()
+    for url in urls:
+        queue.put(url)
+    queue.join()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;扩展：将结果保留下来放到一个列表中rets；使用多个队列in_queue和out_queue，将结果放到另
+      一个队列out_queue，然后将out_queue中内容取出放到一个全局列表rets中
+      rets是一个全局变量，Python中是引用传递，可以直接修改它&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def save_info_with_queue2(in_queue, out_queue):
+    while True:
+        url = in_queue.get()
+        rs = 'requests url and parse the proies then return ips'
+        out_queue.put(rs)
+        in_queue.task_done()  # 从in_queue获取url，将结果放到out_queue中
+    
+def append_info(out_queue, rets):
+    while True:
+        rs = out_queue.get()
+        if rs:
+            rets.extend(rs)
+        out_queue.task_done() # 将out_queue中的内容放到一个全局列表中
+        
+def use_thread_with_queue2():
+    in_queue = Queue.Queue()
+    out_queue = Queue.Queue()
+    for i in range(5):
+        t = threading.Thread(target=save_info_with_queue2, args=(in_queue, out_queue,))
+        t.setDaemon(True)
+        t.start()
+    for i in urls:
+        in_queue.put(url)
+    rets = []
+    for i in range(5):
+        t = threading.Thread(target=append_info, args=(out_queue, rets))
+        t.setDaemon()
+        t.start()
+    in_queue.join()
+    out_queue.join()
+    print(rets)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;协程：是用户空间线程，复杂的逻辑和异步都封装到了底层；使用同步的方式编程，但这种协作
+      式的任务调度可以让用户自己控制CPU的时间，除非自己放弃，否则不会被其他协程抢夺
+      到控制权；协程返回的数据是有序的
+Python2  通过生成器（Generator）实现协程，利用的是yield提供了对协程的基本支持，但功能有限；第三方的Gevent为Python提供了比较
+完善的协程支持；Gevent基于微线程库Greenlet的并发框架
+Python3.4  中asyncio被纳入标准库，提供了使用协程编写单线程并发代码，通过IO多路复用访
+           问套接字和其他资源，运行网络客户端和服务器等原语
+Python3.5 添加了async和await关键字，协程成为了新的语法，而不再是一种生成器类型；IO多
+          路复用与协程的引入，可以极大的提高高负载下程序的IO性能&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import gevent
+def a():
+    print('Start a')
+    gevent.sleep(1)  # sleep会触发上下文切换，通过yield完成，具体由程序控制 
+    print('End a')
+def b():
+    print('Start b')
+    gevent.sleep(2)
+    print('End b')
+gevent.joinall([gevent.spawn(a), gevent.spawn(b),])
+
+from gevent.pool import Pool
+from requests.exceptinos import RequestException
+pool = Pool(10)
+def func(ip):
+    try:
+        requests.get('http://biadu.com', proxy=ip)  # 检验ip是否有效
+    except RequestException:
+        print('the ip is not ok')
+pool.map(func, ips)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;进程：每个进程都有自己的Python解释器实例，不受GIL（Global Interpreter Lock）的限制；更加适合计算密集型任务&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import multiprocessing
+def use_multiprocessing_with_queue():
+    queue = mulitprocessing.JoinableQueue()  # or mulitprocessing.Queue()
+    num_consumers = multiprocessing.cup_count() * 2  # IO密集型2倍，计算密集型与CPU一致
+    for info in infos:
+        queue.put(info)
+    for _ in range(num_consumers):
+        p = mulitprocessing.Process(target=func, args=(queue, ))
+        p.start()
+    queue.join()
+def func(queue):
+    whiel True:
+        s = queue.get(timeout=1)
+        do something with queue and s
+        queue.task_done()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;同步锁也成为线程锁互斥锁mutex&quot;&gt;同步锁（也成为线程锁、互斥锁mutex）&lt;/h2&gt;
+&lt;p&gt;线程的切换是不可预期的，多线程对共享资源进行访问，如不加控制会对数据造成破坏，是结果不可预期（脏读），即线程不安全&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from threading import Thread, Lock
+num = 0                     # mutux = Lock(),通过互斥锁实现同步（也可使用队列，队列是串行的，底层封装了锁）
+def add_num():
+    global num
+    for i in range(100000): # mutex.acquire()
+        num += 1            # mutex.release()
+if __name__ == '__main__':
+    t1 = Thread(target=add_num)
+    t2 = Thread(target=add_num)
+    t3 = Thread(target=add_num)
+    t1.start()
+    t2.start()
+    t3.start()
+    print(num) # 结果可能并不是30万，即线程不安全
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;threading模块提供了Lock和RLock两个类来加锁和释放锁&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;threading.Lock 是一个基本的锁对象，每次只能锁一次（锁进入locked状态），其余的锁请求会阻塞，（blocked状态），需等&lt;/li&gt;
+  &lt;li&gt;待锁释放后（unlocked状态），线程调度程序从处于同步阻转态的线程中选则一个获得锁，并该线程进入运行（running）状态&lt;/li&gt;
+  &lt;li&gt;为避免互斥锁死锁（互相等待），加入超时时间  mutex.acquire(timeout=10)&lt;/li&gt;
+  &lt;li&gt;threading.RLock 代表可重入锁（Reentrant Lock），同一个线程可以对它进行多次锁定、多次释放，但必须成对acquire和release；内部通过计数器追踪嵌套&lt;/li&gt;
+  &lt;li&gt;可变类（内部对象可以改变）的线程安全以降低效率为代价：1 只对有安全问题的方法同步 2 为可变类提供两个版本，单线程环&lt;/li&gt;
+  &lt;li&gt;境使用线程不安全的版本以保证性能，多线程环境使用线程安全的版本&lt;/li&gt;
+  &lt;li&gt;建议使用try…finally…确保必要时释放做
+```javascript
+import threading, time
+class Account:                                  # 经典的银行取现问题
+  def &lt;strong&gt;init&lt;/strong&gt;(self, account_no, balance):    # 定义构造器
+      self.account_no = account_no            # 封装账户编号、账户余额的两个成员变量
+      self._balance = balance
+      self.lock = threading.RLock()
+  def getBalance(self):                       # 账户余额不允许随便修改，只为self._balance提供getter方法
+      return self._balance
+  def draw(self, draw_amount):                # 增加线程安全控制，定义需要保证线程安全的方法（完成取钱操作）
+      self.lock.acquire()                     # 加锁
+      try:
+          if self._balance &amp;gt;= draw_amount:    # 账户余额大于取钱数目
+              print(threading.current_thread().name + “取钱成功！吐出钞票:” + str(draw_amount))
+              time.sleep(0.001)               # 为了测试，强制进行线程切换
+              self._balance -= draw_amount    # 修改余额
+              print(“\t余额为: “ + str(self._balance))
+          else:
+              print(threading.current_thread().name + “取钱失败！余额不足！”) # 返回当前线程current_thread
+      finally:
+          self.lock.release()                 # 修改完成，finally保证一定释放锁&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;def draw(account, draw_amount):                 # 定义一个函数来模拟取钱操作
+    account.draw(draw_amount)
+acct = Account.Account(“1234567” , 1000)        # 创建一个账户
+threading.Thread(name=’甲’, target=draw , args=(acct , 800)).start() # 模拟两个线程对同一个账户取钱
+threading.Thread(name=’乙’, target=draw , args=(acct , 800)).start()&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 13 补充：字典排序 d = {'ok':2, 'no':1, 'yes':0}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;sorted(d)  # 字典进行了改变，注意返回值是排序后的键的列表&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;返回值是[‘no’, ‘ok’, ‘yes’]，字典变为 {‘no’: 0, ‘ok’: 2, ‘yes’: 1}
+sorted(d.item, key=lambda e: e[0], reverse=True) # e[0] 按键排序，reverse可以省略，默认是升序
+[(‘no’, 0), (‘ok’, 2), (‘yes’, 1)]
+sorted(d.item, key=lambda e: e[1], reverse=True) # e[1] 按值排序，得到得是列表，元素是元组
+[(‘no’, 0), (‘yes’, 1), (‘ok’, 2)]&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;字典中缉键不能有重复，{‘ab’:2, ‘bc’:5, ‘dc’:3, ‘bc’:3}，python在初始化字典的时候后面
+的会将前面的覆盖掉，得到的是 {‘ab’: 2, ‘dc’: 3, ‘bc’: 3}&lt;/p&gt;
+
+&lt;p&gt;sorted 函数原型：sorted(iterable[, cmp[, key[, reverse]]])
+l = [(1, 2, 3, 4), (1, 2, 3, 5), (1, 2, 2, 5)]
+先比最后一个，再比倒数第二个，最后比第一个
+sorted(l, key=lambda x: (x[3], x[2], x[1], x[0]))&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;[(1, 2, 3, 4), (1, 2, 2, 5), (1, 2, 3, 5)]&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;x = [1, 2, 6, 4, 5]
+y = x[:]
+z = x&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;id(x)  -&amp;gt; 82778952
+id(y)  -&amp;gt; 82779464  即切片进行的是深拷贝
+id(z)  -&amp;gt; 82778952  即等号赋值进行的是浅拷贝&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;补充：输入’helloworld’ 输出{‘d’: 1, ‘e’: 1, ‘h’: 1, ‘l’: 3, ‘o’: 2, ‘r’: 1, ‘w’: 1}
+from  collections import Counter
+s = ‘helloworld’
+d = Counter(s)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;d        –&amp;gt; Counter({‘d’: 1, ‘e’: 1, ‘h’: 1, ‘l’: 3, ‘o’: 2, ‘r’: 1, ‘w’: 1})
+dict(d)  –&amp;gt; {‘d’: 1, ‘e’: 1, ‘h’: 1, ‘l’: 3, ‘o’: 2, ‘r’: 1, ‘w’: 1}
+```
+Majority Element:
+nums = [1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 6]
+return sorted(collections.Counter(nums).items(), key=lambda a: a[1], reverse=True)[0][0]
+collections.Counter(nums)           –&amp;gt; 返回值 Counter({1: 1, 2: 1, 3: 1, 4: 1, 5: 6, 6: 1})
+collections.Counter(nums).items()   –&amp;gt; 返回值 dict_items([(1, 1), (2, 1), (3, 1), (4, 1), (5, 6), (6, 1)])&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;14-python-实现蒙特卡洛算法计算pi值&quot;&gt;14 python 实现蒙特卡洛算法计算pi值&lt;/h1&gt;
+&lt;p&gt;蒙特卡洛算法是通过概率来计算pi的值的。对于一个单位为1的正方形，以其某一个顶点为圆心，边为半径
+在正方形内画扇形（一个1/4的圆形的扇形），那么扇形的面积就是pi/4。这样，利用概率的方式，“随机”
+往正方形里面放入一些“点”，根据这些点在扇形内的概率（在扇形内的点数/投的总点数），就可以得到扇
+形的面积。
+简单理解，由于正方形为单位1的边长，所以正方形面积S1=1.假设随机投如N个点，其中M个落入扇形内，那
+么可以认为扇形的面积为M/N&lt;em&gt;1。当然，本身，这就是一个概率的过程，不是精确的。当N足够大的时候，得
+到的面积更精确。由于已经扇形的面积为pi/4，所以根据M/N&lt;/em&gt;1=pi/4就可以计算出pi=4*M/N的值。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-················&quot;&gt;import random                                       ·    ·         ·
+def getPi(N):                                       ·       ·      ·
+    cnt = 0                                         ·         ·    ·
+    for i in range(N):                              ·           ·  ·
+        x = random.uniform(0, 1)                    ·             ·· 
+        y = random.uniform(0, 1)                    ················ 
+        if (x*x + y*x) &amp;lt; 1:  # 判断在不在扇形区域内    
+            cnt += 1                                   
+    return 4.0 * cnt / N return 4.0 * cnt / N                  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;15-程序优化的方式也是-set-和-list-速度的对比&quot;&gt;15 程序优化的方式，也是 set 和 list 速度的对比&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;s_list = [str(i) for i in xrange(100000)]
+s_set = set(s_list)
+
+import time
+
+t1 = time.time()
+print('99jkjl' in s_list)
+t2 = time.time()
+print('99jkjl' in s_set)
+t3 = time.time()
+
+print('s_list use %s ' % (t2 - t1))
+print('s_set use %s ' % (t3 - t2))
+ 
+False
+False
+s_list use 0.000566959381104
+s_set use 2.14576721191e-06            # 是不是快了非常多，集合的优势
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;16-通过-map-函数完成并行&quot;&gt;16 通过 map 函数完成并行&lt;/h1&gt;
+&lt;h4 id=&quot;有两个库-multiprocessing-multiprocessingdummy-dummy就是多进程模块的克隆文件唯一不同的是多进程模块使用的是进程而-dummy-使用的是线程&quot;&gt;有两个库： multiprocessing, multiprocessing.dummy; dummy就是多进程模块的克隆文件，唯一不同的是多进程模块使用的是进程，而 dummy 使用的是线程。&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python3&quot;&gt;    # from multiprocessing import Pool
+    import urllib
+    from multiprocessing.dummy import Pool as ThreadPool
+    
+    urls = ['url1', 'url2', 'url3', 'url4', 'url5']
+    pool = ThreadPool(3)  # 完成初始化， 默认为电脑内核数量
+    rets = pool.map(urllib.urlopen, urls)
+    pool.close()
+    pool.join()  # 关闭 pool 并等待 work 完成
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;生成缩略图美观--易调试&quot;&gt;生成缩略图(美观 + 易调试)&lt;/h4&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    import os, PIL
+    from multiprocessing import Pool
+    from PIL import Image
+    
+    SIZE = (75, 75)
+    SAVE_DIRECTORY = 'thumbs'
+    
+    def get_image_paths(folder):
+        return (os.path.join(folder, f) 
+                for f in os.listdir(folder) if 'jpeg' in f)
+    
+    def create_thumbnail(filename):
+        img = Image.open(filename)
+        im.thumbnail(SIZE, Image, ANTIALIAS)
+        base, fname = os.path.split(filename)
+        save_path = os.path.join(base, SAVE_DIRECTORY, fname)
+        im.save(save_path)
+        
+    if __name__ == '__main__':
+        folder = os.path.abspath('***')
+        os.mkdir(os.path.join(folder, SAVE_DIRECTORY))
+        imgs = get_image_paths(folder)
+        
+        pool = Pool()
+        pool.map(create_thumbnail, imgs)
+        pool.close()
+        pool.join()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;17-对比分析&quot;&gt;17 对比分析&lt;/h1&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;os.file.dirname(__file__) 
+&amp;gt;&amp;gt; /home/ubuntu/app_1
+返回脚本的路径；不能再命令行执行，否则返回NameError:name '__file__' is not defined；如果运行python /home/ubuntu/app_1/utils.py 返回如上，如果用相对路径运行python utils.py 返回空字符串
+
+os.file.abspath(__file__) 
+&amp;gt;&amp;gt; /home/ubuntu/app_1/utils.py 
+返回.py文件的绝对路径，所以结合起来使用最好
+
+os.path.abspath(os.path.dirname(__file__)
+&amp;gt;&amp;gt; /home/ubuntu/app_1 # 28 偏函数 from functools import partial 局部的、部分的 函数调用的时候有多个参数，但其中一个参数已经知道了，可以通过这个参数重新绑定一个新的函数，之后可以去调用这个新的函数;当函数的参数个数太多，需要简化时，使用functools.partial可以创建一个新的函数，这个新函数可以固定住原函数的部分参数，从而在调用时更简单 ```python
+def add(a, b):
+    return a + b
+add(4, 3)
+&amp;gt;&amp;gt; 7
+add100 = partial(add, 100) # 将原来的add变为add + 100
+add100(9)
+&amp;gt;&amp;gt; 109 ``` 扩展的功能，当含有默认参数时 ```python
+def add(a, b, c):
+    print a, b, c
+    return a + b + c
+plus = partial(add, 1, 2)
+plus(5)
+&amp;gt;&amp;gt; 1 2 5
+&amp;gt;&amp;gt; 8 
+def add(a, b, c=2):
+    print a, b, c
+plus = partial(add, 101)
+plus(1)
+&amp;gt;&amp;gt; 101 1 2
+plus = partial(add, 101)(1)
+&amp;gt;&amp;gt; 101 1 2
+plus = partial(add, b=101)(1)
+&amp;gt;&amp;gt; 1 101 2  ``` 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;并发编程&quot;&gt;并发编程&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;theading&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;multiprocessing 多进程模块&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;multiprocessing.dummy 多线程模块
+fork() 方法和操作系统有关，fork出子进程，但 windows 的os模块没有此方法
+p.run() 这个方法是定义的时候没有指定 targe 函数，就需要手动 run 去执行，否则什么也不做
+p.start() 即启动进程，这个实际对应的函数 targe 是立即执行的，比如答应targe函数第一行打印时间就可以看出当时立即输出，迷惑的地方是我们都会手动模拟一个耗时操作，如sleep、或其他，这是就一定会交出操作系统时间片；还要结合下面的 join 方法，join 会阻塞主进程，即感觉 targe 函数是顺序执行了，否则需要获得操作系统给的时间片，如果是多个子进程那么可以看到，可能出现乱序的情况
+p.join() 会阻塞当前进程，直到调用 join 方法的那个进程执行完毕，再继续执行当前进程；还有就是看到都是统一进行join，而不是start一个join一个，应为还是join的原因，join的阻塞主进程先执行，start的看主线程给机会 start() 
+p.terminate()停止一个进程实例,但是会变为僵尸进程，需等主进程退出才会消失；可以通过 terminate之后才给他 join一下，即会阻塞等待真正结束，就避免了出现僵尸进程
+p.is_alive():如果p仍然运行，返回True
+p.daemon：默认值为False，代表p为后台运行的守护进程，当p的父进程终止时，p也随之终止；设定为True后，p不能创建自己的新进程，必须在p.start()之前设置；守护进程的重要作用是报活，即向某个服务报告自己还活着
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from multiprocessing import Process, cpu_count import time
+import os
+class MuchCPU(Process):
+  def run(self):
+      print(os.getpid())
+      for i in range(200000000):
+         pass
+if __name__ == '__main__':  # 如果没有main函数，模块导入的时候就会执行，并递归执行知道操作系统的资源耗尽; 主进程os.getpid() 父进程os.getppid()
+  procs = [MuchCPU() for f in range(cpu_count())]
+  t = time.time() 
+  for p in procs:
+      p.start() # start后主进程会安排子进程执行，具体开始时间不明，但是如果是用了下面的join，那阻塞主进程立即执行；如果多个子进程有的join了，有的没有join，那一定是先join的子进程先执行，最后执行start的。
+  for p in procs:
+      p.join() # 子进程执行结束在往下运行，即阻塞主进程
+print('work took {} seconds'.format(time.time() - t))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;进程创建的第二种方式，继承Process类，每次实例化这个类的时候等于实例化了一个进程对象&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;class MyProcess(Process):
+  def __init__(self, val):  # 重载init方法传递参数
+      super(MyProcess, self).__init__()
+      self.val = val
+  def run(self):  # 重载run方法，也就是功能函数 targe 的地方
+      t = time.time()
+      time.sleep(3)
+      print('2', os.getpid(), os.getppid())
+      time.sleep(3)
+      print('3', os.getpid(), os.getppid())
+      print('use time {}'.format(time.time() - t))
+if __name__ == '__main__':
+  print('1', os.getpid(), os.getppid())
+  p = MyProcess(27)
+  p.start()  # 主进程中调用 start 方法 就会自动执行子进程中的 run 方法
+  # p.join() 要进行取舍，是否写成阻塞的形式
+  # 也可以主进程不进行start，而是在init中进行self.start(),效果也是一样的
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;线程模块同步原语，包括锁（Lock），信号量（Semaphore），条件变量（Condition）和事件（EVent）；最好使用Queue模块，它是线程安全的，使用它可以降低程序的复杂度、代码清晰、可读性强。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;协成Gevent，上下文切换通过yield完成，执行gevent.sleep会触发上下文切换；协成池from Gevent.pool import Pool&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;concurrent.futures中包含ThreadPoolExecutor和ProcessPoolExecutor两个执行器，分别用于产生线程池和进程池&lt;/li&gt;
+  &lt;li&gt;Python2通过生成器（Generator）实现协成，利用yield返回，send或next发送数据；Python对协成的支持大抵如此，一般使用第三方库实现的协成来编写程序。Python3.3中添加yield from，允许生成器把它的部分操作委任给另一个生成器；Python3.4中asyncio被纳入标准库；Python3.5添加async和await两个关键字，协成成为新的语法，不在是一种生成器了。I/O多路复用与协成的引入，极大地提高了高负载下程序的I/O性能。
+async用于声明一个协成；await表示一个协成执行完返回，获得协成执行结果，只能在协成内使用。
+async简化了asyncio.coroutine，await简化了yield from&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;aiohttp替代requests&quot;&gt;aiohttp替代requests&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;可作为HTTP客户端&lt;/li&gt;
+  &lt;li&gt;实现HTTP服务&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;queue&quot;&gt;Queue&lt;/h4&gt;
+&lt;p&gt;是multiprocessing提供的一个模块，它的数据结构就是”FIFO——first in first out”的队列，常用的方法有：put(object)入队；get()出队；empty()判断队列是否为空。
+Lock：当多个子进程对同一个queue执行写操作时，为了避免并发操作产生冲突，可以通过加锁的方式使得某个子进程对queue拥有唯一的写权限，其他子进程必须等待该锁释放后才能再开始执行写操作。
+from multiprocessing import Process, Queue, Lock
+q= Queue()
+lock = Lock()
+lock.acquire()
+q.put(value)
+lock.release()
+print q.get()&lt;/p&gt;
+&lt;h4 id=&quot;pipe&quot;&gt;Pipe&lt;/h4&gt;
+&lt;p&gt;Pipe是另一种进程间通信的方式，俗称“管道”。它由两端组成，一端往管道里写入数据，另一端从管道里读取数据。
+from multiprocessing import Process, Pipe
+parent_pipe, child_pipe = Pipe()
+child_pipe.send(‘This is send’)
+child_pipe.close()
+print parent_pipe.recv()&lt;/p&gt;
+&lt;h4 id=&quot;lock&quot;&gt;Lock&lt;/h4&gt;
+&lt;p&gt;多进程与多线程的最大不同在于，多进程中，同一个变量，各自有一份拷贝存在于每个进程中，互不影响。而多线程中，所有变量都由所有线程共享，所以，任何一个共享变量都可以被任何一个线程修改。因此线程之间共享数据最大的危险在于多个线程同时改变一个变量。为了解决这个问题，我们可以借助于threading模块的Lock类给共享变量加锁
+import threading
+lock = threading.Lock()
+lock.acquire()
+    do something
+lock.release()&lt;/p&gt;
+
+&lt;h1 id=&quot;5-zip-izip-和-izip_logest比较&quot;&gt;5 zip, izip 和 izip_logest比较&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;zip是build-in方法，返回长度为序列中最短的,返回的是&amp;lt;zip object at 0x00008*8&amp;gt;对象&lt;/li&gt;
+  &lt;li&gt;python2：itertools中的izip，将不同的迭代器元素聚合到一个迭代器中，比zip要快得多&lt;/li&gt;
+  &lt;li&gt;python2：itertools中的izip_longest，使用最长的迭代器作为返回值的长度，使用fillvalues指定缺失值得默认值&lt;/li&gt;
+  &lt;li&gt;python3：itertools中只保留了zip_longest,亦可指定默认值；
+``` python3
+from itertools import zip_longest&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        “””
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        “””
+        newlist, carry = [], 0
+        for n, m in list(itertools.zip_longest(l1, l2, fillvalue=0)):
+            if n + m + carry &amp;lt; 10:
+                newlist.append(n + m + carry)
+                carry = 0
+            else:
+                newlist.append(n + m + carry - 10)
+                carry = 1
+        return newlist&lt;/p&gt;
+
+&lt;p&gt;if &lt;strong&gt;name&lt;/strong&gt; == ‘&lt;strong&gt;main&lt;/strong&gt;:’
+    s = Solution()
+    s.addTwoNumbers([2,4,3], [5,6,4])&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+# 29 按照指定位置旋转字符串,nums, k
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;def rotate(nums, k):
+    k = k % len(nums)
+    nums = nums[-k:] + nums[:-k]
+    return nums&lt;/p&gt;
+
+&lt;p&gt;print(rotate(‘1234567’, 4)&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;4567123&lt;/p&gt;
+      &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### python 小记
+- Queue 和 Stack 在 Python 中都是有 list ,[] 实现的。 在python 中list是一个dynamic array, 可以通过append在list的尾部添加元素， 通过pop()在list的尾部弹出元素实现Stack的FILO， 如果是pop(0)则弹出头部的元素实现Queue的FIFO。
+- python 中通过import heapq实现优先队列（Priority Queue),提供push和pop两个最基本的操作和heapify初始化操作。
+- 双端队列（deque，全名double-ended queue）可以让你在任何一端添加或者移除元素，因此它是一种具有队列和栈性质的数据结构；Python 的list就可以执行类似于deque的操作， 但是效率会过于慢。 为了提升数据的处理效率， 一些高效的数据结构放在了collections中。 在collections 中提供了deque的类， 如果需要多次对list执行头尾元素的操作， 请使用deque。
+- 堆Heap， 一般情况下，堆通常指的是二叉堆，二叉堆是一个近似完全二叉树的数据结构，即披着二叉树羊皮的数组，故使用数组来实现较为便利。子结点的键值或索引总是小于（或者大于）它的父节点，且每个节点的左右子树又是一个二叉堆(大根堆或者小根堆)。根节点最大的堆叫做最大堆或大根堆，根节点最小的堆叫做最小堆或小根堆。常被用作实现优先队列。
+- 栈Stack， 栈是一种 LIFO(Last In First Out) 的数据结构，常用方法有添加元素，取栈顶元素，弹出栈顶元素，判断栈是否为空。
+- 集合Set， 保存不重复元素的数据结构，是python自带的基本数据结构，有多种初始化方式，s = set()
+- 图Graph, 表示通常使用邻接矩阵和邻接表，前者易实现但是对于稀疏矩阵会浪费较多空间，后者使用链表的方式存储信息但是对于图搜索时间复杂度较高。设顶点个数为 V, 那么邻接矩阵可以使用 V × V 的二维数组来表示。 g[i][j]表示顶点i和顶点j的关系，对于无向图可以使用0/1表示是否有连接，对于带权图则需要使用INF来区分。有重边时保存边数或者权值最大/小的边即可。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;      &lt;/div&gt;
+      &lt;p&gt;V = 5
+g = [[0 for _ in range(V)] for _ in range(V)]
+print(g)
+[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+```&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;二叉树Binary Tree, 二叉树是每个节点最多有两个子树的树结构，子树有左右之分，二叉树常被用于实现二叉查找树和二叉堆。二叉树的第i层至多有 2^{i-1}个结点；深度为k的二叉树至多有 2^k−1个结点；对任何一棵二叉树T，如果其终端结点数为 n0, 度为2的结点数为 n2 , 则 n0=n2 + 1。一棵深度为 k, 且有 2^k −1 个节点称之为满二叉树；深度为 k，有 n个节点的二叉树，当且仅当其每一个节点都与深度为 k 的满二叉树中序号为 1 至 n的节点对应时，称之为完全二叉树。完全二叉树中重在节点标号对应。&lt;/li&gt;
+        &lt;li&gt;Binary Search Tree , 二叉查找树,一颗二叉查找树(BST)是一颗二叉树，其中每个节点都含有一个可进行比较的键及相应的值，且每个节点的键都大于等于左子树中的任意节点的键，而小于右子树中的任意节点的键。
+使用中序遍历可得到有序数组，这是二叉查找树的又一个重要特征。&lt;/li&gt;
+        &lt;li&gt;Map 哈希表， 是一种关联数组的数据结构，常被称为字典或键值对。在 Python 中 dict(Map) 是一种基本的数据结构。&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;30-python-小记&quot;&gt;30 python 小记&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;python中有三种方法，实例方法、类方法（@classmethod）、静态方法（@staticmethod）&lt;/li&gt;
+  &lt;li&gt;类方法的第一个参数时cls，表示该类的一个实例，静态方法与普遍的方法一样&lt;/li&gt;
+  &lt;li&gt;self和cls的区别不是强制的，只是PEP8中一种编程风格，slef通常用作实例方法的第一参数，cls通常用作类方法的第一参数。即通常用self来传递当前类对象的实例，cls传递当前类对象。
+```
+class A(object):
+  def foo(self, x):
+      print(“executing foo(%s,%s)” % (self, x))
+      print(‘self:’, self)
+  @classmethod
+  def class_foo(cls, x):
+      print(“executing class_foo(%s,%s)” % (cls, x))
+      print(‘cls:’, cls)
+  @staticmethod
+  def static_foo(x):
+      print(“executing static_foo(%s)” % x)  &lt;br /&gt;
+a = A()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;print(a.foo)           »&amp;gt; &amp;lt;bound method A.foo of &amp;lt;&lt;strong&gt;main&lt;/strong&gt;.A object at 0x0000000004F6B908»
+print(a.class_foo)     »&amp;gt; &amp;lt;bound method A.class_foo of &amp;lt;class ‘&lt;strong&gt;main&lt;/strong&gt;.A’»
+print(a.static_foo)    »&amp;gt; &amp;lt;function A.static_foo at 0x0000000004F05488&amp;gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### foo方法绑定对象A的实例，class_foo方法绑定对象A，static_foo没有参数绑定。
+
+\ | 实例方法 | 类方法 | 静态方法
+---|--- | --- | ---
+a = A() | a.foo(x) | a.class_foo(x) | a.static_foo(x)
+A  | 不可用 | A.class_foo(x) | A.static_foo(x)
+
+#### 实例是三种方法都可以调用的，而类只可以调用两种;
+- 类方法（classmethod）必须要用类对象作为第一个参数，静态方法（staticmethod）可以没有参数
+- [详细介绍1](http://stackoverflow.com/questions/12179271/meaning-of-classmethod-and-staticmethod-for-beginner),[详细介绍2](http://blog.csdn.net/a447685024/article/details/52424481)
+- 类方法的第一个参数cls，而实例方法的第一个参数是self，表示该类的一个实例;类方法有类变量cls传入，从而可以用cls做一些相关的处理。并且有子类继承时，调用该类方法时，传入的类变量cls是子类，而非父类。 
+
+#### 闭包
+- 可以实现将参数传递给函数，但不立即求值，达到延迟求值的目的。
+- 闭包满足三个条件：必须有一个内嵌的函数；内嵌的函数必须引用外部函数中的变量；外部函数返回值必须是内嵌函数。
+- 类中定义函方法 PyCharm 提示Method xxx may be ‘static’, 原因是该方法不涉及对该类属性的操作，编译器建议声明为@staticmethod，面向对象思想体现。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;def dalay_func(x, y):
+    def caculator():
+        return x + y
+    return caculator&lt;/p&gt;
+
+&lt;p&gt;msum =dalay_func(3, 4)
+print(msum())            »&amp;gt; 7&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### *args 和 **kwargs
+- 为python中的可变参数，*args表示任意多个无名参数，是一个元祖
+- **kwargs表示关键字参数，是一个字典；同时使用时必须*args在前，**kwargs在后
+
+#### @property @x.setter @x.deleter
+- 通过@property装饰器，将类方法转换为类属性（只读），可通过正常的点符号访问，但不能赋值（AtributeError）
+- 可以有@x.setter, @x.getter, @x.deleter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;class C(object):
+    def &lt;strong&gt;init&lt;/strong&gt;(self): self._x = None&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@property
+def x(self):
+    &quot;&quot;&quot;I'm the 'x' property.&quot;&quot;&quot;
+    return self._x
+
+@x.setter
+def x(self, value):
+    self._x = value
+
+@x.deleter
+def x(self):
+    del self._x ``` #### python 快速排序 ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;def qsort(seq):
+    if len(seq) &amp;lt;= 1:
+        return seq
+    else:
+        pivot = seq[0]
+        lesser = qsort([x for x in seq[1:] if x &amp;lt; pivot])
+        greater = qsort([x for x in seq[1:] if x &amp;gt;= pivot])
+        return lesser + [pivot] + greater&lt;/p&gt;
+
+&lt;p&gt;print(qsort([1, 3, 4, 5, 0, -3, -9, 22])  »&amp;gt; [-9, -3, 0, 1, 3, 4, 5, 22]&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### Arrow: better dates and times for Python  [详细](https://arrow.readthedocs.io/en/latest/)
+#### 友好的创建、操作、格式化、转换，日期、时间和时间戳，克服了以下问题：
+- 模块太多：datetime, time, calendar, dateutil, pytz and more
+- 类型太多： date, time, datetime, tzinfo, timedelta, relativedelta and more
+- 时区和时间戳之间的转换冗余、不友好， 幼稚的时区
+- 功能缺失：ISO-8601 parsing， time spans, humanization
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;import arrow&lt;/p&gt;
+
+&lt;p&gt;arrow.utcnow()           »&amp;gt; &amp;lt;Arrow [2017-04-03T02:07:01.518490+00:00]&amp;gt;
+arrow.now()              »&amp;gt; &amp;lt;Arrow [2017-04-03T10:07:00.915456+08:00]&amp;gt;
+arrow.now(‘US/Pacific’)  »&amp;gt; &amp;lt;Arrow [2017-04-02T19:07:02.060521-07:00]&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;arrow.get(1367900664)    »&amp;gt; &amp;lt;Arrow [2013-05-07T04:24:24+00:00]&amp;gt;
+arrow.get(‘1367900664’)  »&amp;gt; &amp;lt;Arrow [2013-05-07T04:24:24+00:00]&amp;gt;
+arrow.get(‘1367900664.15232522’)  »&amp;gt; &amp;lt;Arrow [2013-05-07T04:24:24.152325+00:00]&amp;gt;
+arrow.get(datetime.datetime.utcnow())  »&amp;gt; &amp;lt;Arrow [2017-04-03T02:16:38.217476+00:00]&amp;gt;
+arrow.get(datetime.datetime.utcnow(), ‘US/Pacific’)  »&amp;gt; &amp;lt;Arrow [2017-04-03T02:17:49.488552-07:00]&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;arrow.get(‘2013-05-05 12:30:45’, ‘YYYY-MM-DD HH:mm:ss’) # 由字符串解析
+arrow.get(‘June was born in May 1980’, ‘MMMM YYYY’      # 由字符串搜索得到
+arrow.get(‘2013-09-30T15:34:00.000-07:00’)  # ISO-8601兼容的字符串可以直接识别和解析，不用指定格式字符串&lt;/p&gt;
+
+&lt;p&gt;arrow.get(2013, 5, 5)
+arrow.Arrow(2013, 5, 5)&lt;/p&gt;
+
+&lt;p&gt;a = arrow.utcnow()  »&amp;gt; &amp;lt;Arrow [2017-04-03T02:23:16.383090+00:00]&amp;gt;
+a.datetime  »&amp;gt; datetime.datetime(2017, 4, 3, 2, 23, 16, 383090, tzinfo=tzutc())
+a.naive  »&amp;gt; datetime.datetime(2017, 4, 3, 2, 23, 16, 383090)&lt;/p&gt;
+&lt;h1 id=&quot;atzinfo-ayear-adate-atime-areplacehours-1-minute40-weeks3-aformatyyyy-mm-dd-hhmmss-zz-atouspacific-atolocal-atolocaltoutc&quot;&gt;a.tzinfo, a.year, a.date(), a.time(), a.replace(hours=-1, minute=40, weeks=+3), a.format(‘YYYY-MM-DD HH:mm:ss ZZ’), a.to(‘US/Pacific’), a.to(‘local’), a.to(‘local’).to(‘utc’)&lt;/h1&gt;
+&lt;h1 id=&quot;b--areplace-bhumanize-humanize会输出一个字符串an-hour-ago-in-2-hours&quot;&gt;b = a.replace; b.humanize() Humanize，会输出一个字符串，‘an hour ago’, ‘in 2 hours’&lt;/h1&gt;
+
+&lt;p&gt;arrow.utcnow().span(‘hour’), arrow.utcnow().floor(‘hour’), arrow.utcnow().ceil(‘hour’)
+start, end = datetime(2017, 1, 1, 1, 1), datetime(2017, 1, 1, 3, 3)
+for r in arrow.Arrow.span_range(‘hour’, start, end):
+    print(r)  # print(repr(r))&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+#### 日期处理，倒计时
+```# pyconcd.py
+
+from dateutil import parser, tz
+from dateutil.relativedelta import relativedelta
+from datetime import datetime
+
+PYCON_DATE = parser.parse(&quot;May 12, 2021 8:00 AM&quot;)
+PYCON_DATE = PYCON_DATE.replace(tzinfo=tz.gettz(&quot;America/New_York&quot;))
+
+def time_amount(time_unit: str, countdown: relativedelta) -&amp;gt; str:
+    t = getattr(countdown, time_unit)
+    return f&quot;{t} {time_unit}&quot; if t != 0 else &quot;&quot;
+
+def main():
+    now = datetime.now(tz=tz.tzlocal())
+    countdown = relativedelta(PYCON_DATE, now)
+    time_units = [&quot;years&quot;, &quot;months&quot;, &quot;days&quot;, &quot;hours&quot;, &quot;minutes&quot;, &quot;seconds&quot;]
+    output = (t for tu in time_units if (t := time_amount(tu, countdown)))
+    pycon_date_str = PYCON_DATE.strftime(&quot;%A, %B %d, %Y at %H:%M %p %Z&quot;)
+    print(f&quot;PyCon US 2021 will start on:&quot;, pycon_date_str)
+    print(&quot;Countdown to PyCon US 2021:&quot;, &quot;, &quot;.join(output))
+
+if __name__ == &quot;__main__&quot;:
+    main()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h1 id=&quot;is--id身份标识type数据类型和value值&quot;&gt;is == (id(身份标识)、type(数据类型)和value(值))&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;is和==都是对对象进行比较判断作用的&lt;/li&gt;
+  &lt;li&gt;== 判断value是否相等，is 判断id是和否相等&lt;/li&gt;
+  &lt;li&gt;is也被叫做同一性运算符，这个运算符比较判断的是对象间的唯一身份标识，也就是id是否相同&lt;/li&gt;
+  &lt;li&gt;只有数值型和字符串型的情况下，a is b才为True&lt;/li&gt;
+  &lt;li&gt;当a和b是tuple，list，dict或set型时，a is b为False&lt;/li&gt;
+  &lt;li&gt;特殊的，例如如果a=[1, 2, 3], b = a,这种的 a is b 返回 True；即浅拷贝不满足上面的规则&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">1 装饰器 装饰器用于封装函数或类的代码工具；处理前置条件或运行后清理；接受被装饰的函数作为其位置参数，返回原始参数或其他的调用； 多个装饰器执行顺序：自底向上；函数解析顺序：自内向外；（自底向上装饰、自内向外解析） def decorated_by(func): func.__doc__ += '\nDecorated by decorated_by.' return func def A def B @A def decorator def decorator @B print(&quot;a&quot;) print('b') def func func = func func = func print('c') print('A') print('B') return return func return func return decorator return decorator =&amp;gt; abcBA class Registry(object): a = Registry() def __init__(self): b = Registry() self._functions = [] def register(self, decorated): @a.register @b.register @a.register self._functions.append(decorated) def foo(x=3): def bar(x=5): @b.register return decorated return x return x def baz(x=7): def run_all(self, *args, **kw): return x return_valuse = [] a.run_all() =&amp;gt; [3, 7] for func in self._functions: b.run_all() =&amp;gt; [5, 7] return_values.append(func(*args, **kw)) a.run_all(4) =&amp;gt; [4, 4] return return_values 装饰器本身含有参数，需要在包一层，即三层（编译器会自动判断装饰器是否有参数); 第一层是普通方法，用于接收装饰器的参数；第二层是装饰器；第三层是对应的包装函数。每一层都要返回对应包装的函数; from django.core.cache import cache def cache_it(key, timeout=null): def real_wrapper(func): def wrapper(*args, **kw): if cache.has_key(key): data = cache.get(key) else:; data = func(*args, **kw) # print(&quot;Entering&quot;, func.__name__) cache.set(key, data, timeout) # args是一个元组，可以直接sum(args), 也可以 for _, item in enumerate(args) 取出 return func # kw 是一个字典，可以 kw.items() 取出 return wrapper return real_wrapper import functools 保留被装饰函数的上下文（文档字符串、名字等） import inspect 获取函数参数（也可以对类函数参数进行判断） inspect.getcallargs 返回一个将参数名字和值作为键值对的字典；不必检查参数username是基于位置的参数还是基于关键字的参数，而只需在字典中查找即可; import functools, inspect def check_is_admin(f): @functools.wraps(f) def wrapper(*args, **kwargs): func_args = inspect.getcallargs(f, *args, **kwargs) print func_args # {'username':'admin', 'food':'chocolate'} if func_args.get('username') != 'admin': raise Exception(&quot;This user is not allowed to get food&quot;) return f(*args, **kwargs) return wrapper import functools def is_admin(admin='admin'): def decorated(f): @functools.wraps(f) def wrapper(*args, **kwargs): # import ipdb # ipdb.set_trace() if kwargs.get(&quot;username&quot;) != admin: raise Exception(&quot;This user is not allowed to get food&quot;) return f(*args, **kwargs) return wrapper return decorated @is_admin(admin='root') def barfoo(username='someone'): &quot;&quot;&quot;hhDo crazy stuff&quot;&quot;&quot; print( '{0} get food'.format(username)) if __name__ == '__main__': barfoo(username='root') # root get food 装饰器 -&amp;gt; 授权 (Authorization) ``` from functools import wraps</summary></entry></feed>
